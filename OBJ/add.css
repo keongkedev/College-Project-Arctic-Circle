@@ -1,0 +1,310 @@
+html body {
+    margin: 0;
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F3F3F3;
+    color: #474747;
+    font-family: "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+}
+
+/* 漢堡選單 */
+.hamburger {
+    float: right;
+    position: fixed;
+    right: 0;
+    top: 20px;
+    margin-right: 30px;
+    margin-left: 10px;
+    width: 1.8rem;
+    cursor: pointer;
+    z-index: 70;
+}
+
+.hamburger div {
+    height: 3px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #474747;
+    margin: 3px 0;
+    float: right;
+    transition: 0.3s ease-in;
+    /* mix-blend-mode: exclusion; */
+}
+
+.hamburger:hover .bar-1 {
+    width: 80%;
+}
+
+.hamburger:hover .bar-3 {
+    width: 60%;
+}
+
+.hamburger.active .bar-1 {
+    transform: rotate(-45deg);
+}
+
+.hamburger.active .bar-3 {
+    transform: rotate(45deg);
+}
+
+.hamburger.active .bar-2 {
+    background: transparent;
+}
+
+.hamburger.active .bar-1,
+.hamburger.active .bar-3 {
+    position: absolute;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.hamburger.active:hover .bar-1,
+.hamburger.active:hover .bar-3 {
+    width: 100%;
+}
+
+/* 漢堡選單框架 */
+.siteset {
+    float: right;
+    position: fixed;
+    background: #48468D;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    transition: 0.8s ease-out;
+    clip-path: circle(0px at 100% 0);
+    z-index: 60;
+    scroll-behavior: smooth;
+}
+
+.siteset.active {
+    clip-path: circle(1200px at 50% 50%);
+    transition: 0.5s ease-in;
+}
+
+/* 漢堡選單內容 */
+.siteset .item {
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gridmask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textnum {
+    font-size: 60px;
+    font-weight: 1000;
+    color: #F3F3F3;
+}
+
+.g-text {
+    font-size: 30px;
+    color: #F3F3F3;
+}
+
+.siteset>a[data-list="0"] {
+    background: url("image/index img/bg_index.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="1"] {
+    background: url("image/ch001.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="2"] {
+    background: url("image/ch002.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="3"] {
+    background: url("image/ch003.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="4"] {
+    background: url("image/ch004.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="5"] {
+    background: url("image/ch005.png");
+    background-size: cover;
+}
+
+.siteset>a[data-list="6"] {
+    background: url("image/ch006.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.siteset>a[data-list="7"] {
+    background: url("image/ch007.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.henderbackground>div[data-list="ch01"] {
+    background: url("image/ch001.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.henderbackground>div[data-list="ch02"] {
+    background: url("image/ch002.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.henderbackground>div[data-list="ch03"] {
+    background: url("image/ch003.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.henderbackground>div[data-list="ch04"] {
+    background: url("image/ch004.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.henderbackground>div[data-list="chart"] {
+    background: url("image/chart.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* 複寫區 */
+hr {
+    margin: 0;
+}
+
+h2 {
+    margin: 0 0 50px;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+input[type="text"],
+input[type="number"] {
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+    margin: 5px;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover {
+    background: #b7b7b7;
+    border: none;
+}
+
+input[type="submit"] {
+    background: transparent;
+    border: #7B7FB6 2px solid;
+    border-radius: 25px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #474747;
+}
+
+input[type="file"]{
+    margin-bottom: 10px;
+}
+
+.btn {
+ margin-top: 20px;
+}
+
+/* 內容 */
+.addcontainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+}
+
+.left{
+    margin-right: 50px;
+}
+
+.right{
+    height: 522px;
+    position: relative;
+    border-bottom: #474747 1px solid;
+}
+
+.title {
+    font-size: 44px;
+    padding: 0;
+    border-bottom: #474747 2px solid;
+}
+
+.pricearea {
+    padding-top: 20px;
+    padding-left: 13px;
+    border-top: #474747 1px solid;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #48468D;
+}
+
+.pricearea p {
+    margin: 0;
+}
+
+/* 照片 */
+img{
+    margin: 20px auto 10px auto;
+    border-radius: 8px;
+    max-width: 100%;
+    display: none;
+}
+
+.label{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px;
+    background: #dddddd;
+    display: block;
+}
+.label:hover{
+    background: #00B7e6;
+}
+.label:active{
+    background: #9fa1a0;
+}
+.label:invalid{
+    color: #474747;
+}
+.label:valid{
+    color: #ffffff;
+}
+
+.text{
+    margin: 10px auto 10px auto;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>周邊</title>
+  <!-- vue -->
+  <script src="vendor/vue/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/f9889db376.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet'
+    href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="image/smalllogo.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="navbar">
+    <!-- 喜歡的商品 -->
+    <div id="follow"><i class="fas fa-heart"></i></div>
+    <!-- 跑馬燈 -->
+    <div class="textarea">
+      <marquee behavior="" direction="">營利30%會捐贈給環保團體！　旅鼠跳樓馬克杯熱銷中！　北極環保熊媽媽袋大量發生中！</marquee>
+    </div>
+    <div class="iconr">
+      <!-- 購物車 -->
+      <div id="cart">
+        <i class="fas fa-shopping-cart" style="font-size: 30px;"></i>
+        <div class="num-cart">0</div>
+      </div>
+      <!-- 漢堡選單 -->
+      <div class="hamburger" @click="hamburger()">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+        <div class="bar-3"></div>
+      </div>
+    </div>
+    <!-- 漢堡內容 -->
+    <div class="siteset">
+      <a class="item" data-list="0" name="#" href="index.html">
+        <div class="gridmask">
+          <p class="textnum">top</p>
+          <p class="g-text">首頁</p>
+        </div>
+      </a>
+      <a class="item" data-list="1" name="#ch1" href="index.html#ch1">
+        <div class="gridmask">
+          <p class="textnum">01</p>
+          <p class="g-text">關於北極圈</p>
+        </div>
+      </a>
+      <a class="item" data-list="2" href="index.html#ch2">
+        <div class="gridmask">
+          <p class="textnum">02</p>
+          <p class="g-text">北極動物介紹</p>
+        </div>
+      </a>
+      <a class="item" data-list="3" href="index.html#ch3">
+        <div class="gridmask">
+          <p class="textnum">03</p>
+          <p class="g-text">北極環境問題</p>
+        </div>
+      </a>
+      <a class="item" data-list="4" href="index.html#ch4">
+        <div class="gridmask">
+          <p class="textnum">04</p>
+          <p class="g-text">我們可以怎麼做？</p>
+        </div>
+      </a>
+      <a class="item" data-list="5" href="index.html#donate">
+        <div class="gridmask">
+          <p class="textnum">donate</p>
+          <p class="g-text">捐款管道</p>
+        </div>
+      </a>
+      <a class="item" data-list="6" href="shop.html">
+        <div class="gridmask">
+          <p class="textnum">shop</p>
+          <p class="g-text">我們的周邊</p>
+        </div>
+      </a>
+      <a class="item" data-list="7" href="index.html#team">
+        <div class="gridmask">
+          <p class="textnum">team</p>
+          <p class="g-text">製作團隊</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 幻燈片 -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="image/banner_01.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/banner_02.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/banner_03.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="wrapper">
+    <!-- 商品分類 -->
+    <aside class="wrapper sidemenu">
+      <ul>
+        <li class="btn-98">全部商品</li>
+        <li class="btn-98">文具用品</li>
+        <li class="btn-98">簡約生活</li>
+        <li class="btn-98">實用小物</li>
+      </ul>
+    </aside>
+    <!-- 商品列表 -->
+    <div class="page_frame">
+      <div class="page gallery">
+        <div class="item-list" id="shop">
+          <div class='item' v-for="item in Shops">
+            <img class='pic-prod' alt='' v-bind:src="item.poster" />
+            <h3 class='name'>{{item.gameName}}</h3>
+            <h4 class='price'>{{item.price}}</h4>
+            <div class='btn-list'>
+              <div data-pdid='item.id' class='add-cart'><i class='fas fa-shopping-cart'></i></div>
+              <div data-fpdid='item.id' class='add-follow'><i class='far fa-heart'></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 購物車 -->
+  <div class="shoppinglist">
+    <h2>Shopping List</h2>
+    <div class="g-shoplist">
+      <ul id="cartlist"></ul>
+      <div class='summary'>
+        <div class='sum_header'>訂單摘要</div>
+        <div class='sum_body'>
+          <div class="totalbody">
+            <p class="totaltext">商品總計</p>
+            <span class="totalList" id='total'></span>
+          </div>
+          <div class="totalbody">
+            <p class="totaltext">運費</p>
+            <span class="totalList" id='total'>60</span>
+          </div>
+          <p class="sm_text" style="color:#48468D;">營利30%會捐贈給環保團體！</p>
+          <div class='divider'></div>
+          <div class="offtext">
+            <div class="totalbody">
+              <p class="totaltext">結帳總金額</p>
+              <span class="totalList" id='sum'></span>
+            </div>
+            <div class="totalbody">
+              <p class="totaltext sm_text">其中捐贈金額（不含運費）</p>
+              <span class="totalList" id='donate'></span>
+            </div>
+            <button class='btn-blue'>前往結帳</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 喜歡的商品 -->
+  <div class="followlist">
+    <h2>Follow List</h2>
+    <ul id="waitlist">
+      <li class="follow-item">尚無收藏項目</li>
+    </ul>
+  </div>
+
+  <a class="add_btn" href="add.html">前往上架頁面</a>
+
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    var shopVue = new Vue({
+      el: "#shop",
+      data: {
+        Shops: []
+      }
+    })
+
+    $.get("/shop", function (data, status) {
+      if (status == "success") {
+        shopVue.Shops = data;
+      }
+    })
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

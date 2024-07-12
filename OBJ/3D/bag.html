@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>bag</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="../add.css">
+	<link rel="icon" href="../image/smalllogo.ico" type="image/x-icon" />
+</head>
+
+<body>
+	<div class="hamburger" @click="hamburger()">
+		<div class="bar-1"></div>
+		<div class="bar-2"></div>
+		<div class="bar-3"></div>
+	  </div>
+	  <div class="siteset">
+		<a class="item" data-list="0" name="#" href="../index.html">
+		  <div class="gridmask">
+			<p class="textnum">top</p>
+			<p class="g-text">首頁</p>
+		  </div>
+		</a>
+		<a class="item" data-list="1" name="#ch1" href="../index.html#ch1">
+		  <div class="gridmask">
+			<p class="textnum">01</p>
+			<p class="g-text">關於北極圈</p>
+		  </div>
+		</a>
+		<a class="item" data-list="2" href="../index.html#ch2">
+		  <div class="gridmask">
+			<p class="textnum">02</p>
+			<p class="g-text">北極動物介紹</p>
+		  </div>
+		</a>
+		<a class="item" data-list="3" href="../index.html#ch3">
+		  <div class="gridmask">
+			<p class="textnum">03</p>
+			<p class="g-text">北極環境問題</p>
+		  </div>
+		</a>
+		<a class="item" data-list="4" href="../index.html#ch4">
+		  <div class="gridmask">
+			<p class="textnum">04</p>
+			<p class="g-text">我們可以怎麼做？</p>
+		  </div>
+		</a>
+		<a class="item" data-list="5" href="../index.html#donate">
+		  <div class="gridmask">
+			<p class="textnum">donate</p>
+			<p class="g-text">捐款管道</p>
+		  </div>
+		</a>
+		<a class="item" data-list="6" href="../shop.html">
+		  <div class="gridmask">
+			<p class="textnum">shop</p>
+			<p class="g-text">我們的周邊</p>
+		  </div>
+		</a>
+		<a class="item" data-list="7" href="../index.html#team">
+		  <div class="gridmask">
+			<p class="textnum">team</p>
+			<p class="g-text">製作團隊</p>
+		  </div>
+		</a>
+	  </div>
+
+	<script type="module">
+		import * as THREE from './build/three.module.js';
+		import { OrbitControls } from './modules/jsm/controls/OrbitControls.js';
+		import { GLTFLoader } from './modules/jsm/loaders/GLTFLoader.js';
+		import { DDSLoader } from './modules/jsm/loaders/DDSLoader.js';
+		import { DRACOLoader } from './modules/jsm/loaders/DRACOLoader.js';
+
+		var container, stats, controls;
+		var camera, scene, renderer, envmapfile;
+
+		init();
+		animate();
+
+		function init() {
+			//置入html
+			container = document.createElement('div');
+			document.body.appendChild(container);
+
+			// 設定攝影機
+			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.25, 1000);
+			camera.position.set(0, 0, 5);
+
+			scene = new THREE.Scene();
+			scene.background = new THREE.Color(0xf3f3f3);
+			envmapfile = '';
+
+
+			// model
+			var loader = new GLTFLoader().setPath('./');
+			DRACOLoader.setDecoderPath('./draco/gltf/');
+			loader.setDRACOLoader(new DRACOLoader());
+			loader.setDDSLoader(new DDSLoader());
+			loader.load('bag.glb', function (gltf) {
+				scene.add(gltf.scene);
+
+				var hemiLight = new THREE.HemisphereLight(0xffffff, 0x999999, 1);
+				hemiLight.position.set(0, 50, 0);
+				scene.add(hemiLight);
+
+				var dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
+				dirLight.position.set(-10, 50, 0);
+
+				scene.add(dirLight);
+			});
+
+
+			// 渲染
+			renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.gammaOutput = true;
+			container.appendChild(renderer.domElement);
+
+			renderer.shadowMap.enabled = true;
+			renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+			// 攝影機控制
+			controls = new OrbitControls(camera, renderer.domElement); //類似軌道種中的衛星，控制滑鼠和鍵盤在場景中遊走
+			// controls.minDistance = 1;
+			controls.maxDistance = 50;
+			controls.enableDamping = true;
+			controls.update();
+		}
+
+		function animate() {
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);
+		}
+
+	</script>
+
+</body>
+<script src="../script.js"></script>
+</html>

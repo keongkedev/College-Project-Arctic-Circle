@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Submit data by form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="add.css">
+  <link rel="icon" href="image/smalllogo.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="hamburger" @click="hamburger()">
+    <div class="bar-1"></div>
+    <div class="bar-2"></div>
+    <div class="bar-3"></div>
+  </div>
+  <div class="siteset">
+    <a class="item" data-list="0" name="#" href="index.html">
+      <div class="gridmask">
+        <p class="textnum">top</p>
+        <p class="g-text">首頁</p>
+      </div>
+    </a>
+    <a class="item" data-list="1" name="#ch1" href="index.html#ch1">
+      <div class="gridmask">
+        <p class="textnum">01</p>
+        <p class="g-text">關於北極圈</p>
+      </div>
+    </a>
+    <a class="item" data-list="2" href="index.html#ch2">
+      <div class="gridmask">
+        <p class="textnum">02</p>
+        <p class="g-text">北極動物介紹</p>
+      </div>
+    </a>
+    <a class="item" data-list="3" href="index.html#ch3">
+      <div class="gridmask">
+        <p class="textnum">03</p>
+        <p class="g-text">北極環境問題</p>
+      </div>
+    </a>
+    <a class="item" data-list="4" href="index.html#ch4">
+      <div class="gridmask">
+        <p class="textnum">04</p>
+        <p class="g-text">我們可以怎麼做？</p>
+      </div>
+    </a>
+    <a class="item" data-list="5" href="index.html#donate">
+      <div class="gridmask">
+        <p class="textnum">donate</p>
+        <p class="g-text">捐款管道</p>
+      </div>
+    </a>
+    <a class="item" data-list="6" href="shop.html">
+      <div class="gridmask">
+        <p class="textnum">shop</p>
+        <p class="g-text">我們的周邊</p>
+      </div>
+    </a>
+    <a class="item" data-list="7" href="index.html#team">
+      <div class="gridmask">
+        <p class="textnum">team</p>
+        <p class="g-text">製作團隊</p>
+      </div>
+    </a>
+  </div>
+  <div class="container">
+
+    <h2>商家上架頁面</h2>
+    <form method="post" action="/add" encType="multipart/form-data" class="addcontainer">
+      <!-- <div class="left"> -->
+        <p>請上傳400*400的圖片</p>
+        <input class="form-control-file" type="file" name="poster" required>
+      <!-- </div> -->
+      <!-- <div class="right"> -->
+        <input class="form-control" type="text" name="gameName" placeholder="商品名稱" maxlength="10" required> <br>
+        <input class="form-control" name="id" type="text" placeholder="訂單編號">
+        <input class="form-control" type="number" name="price" id="price" placeholder="價錢"><br>
+        <input class="btn btn-danger" type="submit" value="Submit">
+      <!-- </div> -->
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</script>
+
+</html>
