@@ -514,15 +514,7 @@ hr {
     width: 180px;
 }
 
-.tip_1,
-.tip_2,
-.tip_3,
-.tip_4,
-.tip_5,
-.tip_6,
-.tip_7,
-.tip_8,
-.tip_9 {
+.tip {
     transform: translateX(200%);
     transition: 0.5s ease-in-out;
     position: fixed;
@@ -533,15 +525,7 @@ hr {
     top: 0;
 }
 
-.tip_1.active,
-.tip_2.active,
-.tip_3.active,
-.tip_4.active,
-.tip_5.active,
-.tip_6.active,
-.tip_7.active,
-.tip_8.active,
-.tip_9.active {
+.tip.active {
     transform: translateX(0%);
 }
 
@@ -1710,7 +1694,7 @@ li input {
 
 .section-wrapper {
     text-align: center;
-    margin: 200px 0 100px 0;
+    margin-bottom: 100px;;
 }
 
 .countrytext {
@@ -2742,6 +2726,10 @@ li input {
         padding: 20px;
         color: #707070;
         text-align: center;
+    }
+
+    .tip{
+        z-index: 1000;
     }
 
     .tipsbackground .picturex34 img {
