@@ -1,1219 +1,1434 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- vue.js -->
     <script src="vendor/vue/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
     <title>北極圈的消失</title>
     <link rel="icon" href="image/smalllogo.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- 漢堡選單 -->
     <div class="hamburger" @click="hamburger()">
-        <div class="bar-1"></div>
-        <div class="bar-2"></div>
-        <div class="bar-3"></div>
+      <div class="bar-1"></div>
+      <div class="bar-2"></div>
+      <div class="bar-3"></div>
     </div>
     <!-- 漢堡內容 -->
     <div class="siteset">
-        <a class="item" data-list="0" name="#" href="#">
-            <div class="gridmask">
-                <p class="textnum">top</p>
-                <p class="g-text">首頁</p>
-            </div>
-        </a>
-        <a class="item" data-list="1" name="#ch1" href="#ch1">
-            <div class="gridmask">
-                <p class="textnum">01</p>
-                <p class="g-text">關於北極圈</p>
-            </div>
-        </a>
-        <a class="item" data-list="2" href="#ch2">
-            <div class="gridmask">
-                <p class="textnum">02</p>
-                <p class="g-text">北極動物介紹</p>
-            </div>
-        </a>
-        <a class="item" data-list="3" href="#ch3">
-            <div class="gridmask">
-                <p class="textnum">03</p>
-                <p class="g-text">北極環境問題</p>
-            </div>
-        </a>
-        <a class="item" data-list="4" href="#ch4">
-            <div class="gridmask">
-                <p class="textnum">04</p>
-                <p class="g-text">我們可以怎麼做？</p>
-            </div>
-        </a>
-        <a class="item" data-list="5" href="#donate">
-            <div class="gridmask">
-                <p class="textnum">donate</p>
-                <p class="g-text">捐款管道</p>
-            </div>
-        </a>
-        <a class="item" data-list="6" href="shop.html" target="_blank">
-            <div class="gridmask">
-                <p class="textnum">shop</p>
-                <p class="g-text">我們的周邊</p>
-            </div>
-        </a>
-        <a class="item" data-list="7" href="#team">
-            <div class="gridmask">
-                <p class="textnum">team</p>
-                <p class="g-text">製作團隊</p>
-            </div>
-        </a>
+      <a class="item" data-list="0" name="#" href="#">
+        <div class="gridmask">
+          <p class="textnum">top</p>
+          <p class="g-text">首頁</p>
+        </div>
+      </a>
+      <a class="item" data-list="1" name="#ch1" href="#ch1">
+        <div class="gridmask">
+          <p class="textnum">01</p>
+          <p class="g-text">關於北極圈</p>
+        </div>
+      </a>
+      <a class="item" data-list="2" href="#ch2">
+        <div class="gridmask">
+          <p class="textnum">02</p>
+          <p class="g-text">北極動物介紹</p>
+        </div>
+      </a>
+      <a class="item" data-list="3" href="#ch3">
+        <div class="gridmask">
+          <p class="textnum">03</p>
+          <p class="g-text">北極環境問題</p>
+        </div>
+      </a>
+      <a class="item" data-list="4" href="#ch4">
+        <div class="gridmask">
+          <p class="textnum">04</p>
+          <p class="g-text">我們可以怎麼做？</p>
+        </div>
+      </a>
+      <a class="item" data-list="5" href="#donate">
+        <div class="gridmask">
+          <p class="textnum">donate</p>
+          <p class="g-text">捐款管道</p>
+        </div>
+      </a>
+      <a class="item" data-list="6" href="shop.html" target="_blank">
+        <div class="gridmask">
+          <p class="textnum">shop</p>
+          <p class="g-text">我們的周邊</p>
+        </div>
+      </a>
+      <a class="item" data-list="7" href="#team">
+        <div class="gridmask">
+          <p class="textnum">team</p>
+          <p class="g-text">製作團隊</p>
+        </div>
+      </a>
     </div>
 
     <!-- 首頁 -->
     <section id="home">
-        <div class="henderbackground">
-            <div class="indeximg">
-                <img id="LOGO" class="indexitem" src="image/index img/index_1.PNG">
-                <img id="牛" class="indexitem animal1" src="image/index img/index_5.PNG">
-                <img id="北極熊" class="indexitem animal2" src="image/index img/index_2.PNG">
-                <img id="狐狸" class="indexitem animal3" src="image/index img/index_3.PNG">
-                <img id="老鼠" class="indexitem animal4" src="image/index img/index_4.PNG">
-                <img id="海豹" class="indexitem animal5" src="image/index img/index_6.PNG">
-                <img id="鯨魚" class="indexitem animal6" src="image/index img/index_7.PNG">
-                <img id="雪貂" class="indexitem animal7" src="image/index img/index_8.PNG">
-                <img id="雪鷗" class="indexitem animal8" src="image/index img/index_9.PNG">
-                <img id="海鸚" class="indexitem animal9" src="image/index img/index_10.PNG">
-            </div>
-            <a href="#ch0" class="scroll">
-                <p>Scroll Down</p>
-                <div class="slideDown"></div>
-            </a>
+      <div class="henderbackground">
+        <div class="indeximg">
+          <img id="LOGO" class="indexitem" src="image/index img/index_1.PNG" />
+          <img
+            id="牛"
+            class="indexitem animal1"
+            src="image/index img/index_5.PNG"
+          />
+          <img
+            id="北極熊"
+            class="indexitem animal2"
+            src="image/index img/index_2.PNG"
+          />
+          <img
+            id="狐狸"
+            class="indexitem animal3"
+            src="image/index img/index_3.PNG"
+          />
+          <img
+            id="老鼠"
+            class="indexitem animal4"
+            src="image/index img/index_4.PNG"
+          />
+          <img
+            id="海豹"
+            class="indexitem animal5"
+            src="image/index img/index_6.PNG"
+          />
+          <img
+            id="鯨魚"
+            class="indexitem animal6"
+            src="image/index img/index_7.PNG"
+          />
+          <img
+            id="雪貂"
+            class="indexitem animal7"
+            src="image/index img/index_8.PNG"
+          />
+          <img
+            id="雪鷗"
+            class="indexitem animal8"
+            src="image/index img/index_9.PNG"
+          />
+          <img
+            id="海鸚"
+            class="indexitem animal9"
+            src="image/index img/index_10.PNG"
+          />
         </div>
+        <a href="#ch0" class="scroll">
+          <p>Scroll Down</p>
+          <div class="slideDown"></div>
+        </a>
+      </div>
 
-        <div class="indexmargin" id="ch0">
-            <div class="countrytext col-">
-                <div class="animaltext">
-                    <p class="title">21,000</p>
-                    <p>發現已知物種數量</p>
-                </div>
-                <div class="text col-">
-                    <h1>北極國家知多少！</h1>
-                    <p>北極圈內的國家包含：<br> 加拿大、俄羅斯、美國、挪威、冰島、芬蘭、格陵蘭（丹麥）及瑞典</p>
-                </div>
-            </div>
-            <div class="countryflag">
-                <div class="flaggroup left col-sm-12">
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_canada.PNG" alt="">
-                        <div class="flagdesc">加拿大 Canada</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Russia.PNG" alt="">
-                        <div class="flagdesc">俄羅斯 Russia</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_usa.PNG" alt="">
-                        <div class="flagdesc">美國阿拉斯加 America</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Norway.PNG" alt="">
-                        <div class="flagdesc">挪威 Norway</div>
-                    </div>
-                </div>
-                <div class="flaggroup right col-sm-12">
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Sweden.PNG" alt="">
-                        <div class="flagdesc">瑞典 Sweden</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Greenland.PNG" alt="">
-                        <div class="flagdesc">格陵蘭 Greenland</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Finland.PNG" alt="">
-                        <div class="flagdesc">芬蘭 Finland</div>
-                    </div>
-                    <div class="flag">
-                        <img class="shadow" src="image/flag/flag_ch1_Iceland.PNG" alt="">
-                        <div class="flagdesc">冰島 Iceland</div>
-                    </div>
-                </div>
-            </div>
+      <div class="indexmargin" id="ch0">
+        <div class="countrytext col-">
+          <div class="animaltext">
+            <p class="title">21,000</p>
+            <p>發現已知物種數量</p>
+          </div>
+          <div class="text col-">
+            <h1>北極國家知多少！</h1>
+            <p>
+              北極圈內的國家包含：<br />
+              加拿大、俄羅斯、美國、挪威、冰島、芬蘭、格陵蘭（丹麥）及瑞典
+            </p>
+          </div>
         </div>
+        <div class="countryflag">
+          <div class="flaggroup left col-sm-12">
+            <div class="flag">
+              <img class="shadow" src="image/flag/flag_ch1_canada.PNG" alt="" />
+              <div class="flagdesc">加拿大 Canada</div>
+            </div>
+            <div class="flag">
+              <img class="shadow" src="image/flag/flag_ch1_Russia.PNG" alt="" />
+              <div class="flagdesc">俄羅斯 Russia</div>
+            </div>
+            <div class="flag">
+              <img class="shadow" src="image/flag/flag_ch1_usa.PNG" alt="" />
+              <div class="flagdesc">美國阿拉斯加 America</div>
+            </div>
+            <div class="flag">
+              <img class="shadow" src="image/flag/flag_ch1_Norway.PNG" alt="" />
+              <div class="flagdesc">挪威 Norway</div>
+            </div>
+          </div>
+          <div class="flaggroup right col-sm-12">
+            <div class="flag">
+              <img class="shadow" src="image/flag/flag_ch1_Sweden.PNG" alt="" />
+              <div class="flagdesc">瑞典 Sweden</div>
+            </div>
+            <div class="flag">
+              <img
+                class="shadow"
+                src="image/flag/flag_ch1_Greenland.PNG"
+                alt=""
+              />
+              <div class="flagdesc">格陵蘭 Greenland</div>
+            </div>
+            <div class="flag">
+              <img
+                class="shadow"
+                src="image/flag/flag_ch1_Finland.PNG"
+                alt=""
+              />
+              <div class="flagdesc">芬蘭 Finland</div>
+            </div>
+            <div class="flag">
+              <img
+                class="shadow"
+                src="image/flag/flag_ch1_Iceland.PNG"
+                alt=""
+              />
+              <div class="flagdesc">冰島 Iceland</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="ch01">
-        <!--01關於北極圈-->
-        <div class="henderbackground " id="ch1">
-            <div class="henderbackground" data-list="ch01"></div>
-            <div class="headerarea">
-                <div class="title">
-                    <p class="title0">0</p>
-                    <p class="title1">1</p>
-                </div>
-                <div class="headerbar">
-                    <h1 class="henderh1">關於北極圈</h1>
-                    <p class="henderp">About the Arctic Circle</p>
-                </div>
-            </div>
+      <!--01關於北極圈-->
+      <div class="henderbackground" id="ch1">
+        <div class="henderbackground" data-list="ch01"></div>
+        <div class="headerarea">
+          <div class="title">
+            <p class="title0">0</p>
+            <p class="title1">1</p>
+          </div>
+          <div class="headerbar">
+            <h1 class="henderh1">關於北極圈</h1>
+            <p class="henderp">About the Arctic Circle</p>
+          </div>
         </div>
-        <!--你知道北極其實是一片海嗎？-->
-        <div class="section-wrapper">
-            <div>
-                <div class="containertitle ">
-                    <h1 class="haveovalh1">你知道北極圈其實是一片海嗎？</h1>
-                </div>
-            </div>
-            <div>
-                <p class="linetext">北極不像南極是陸地，北極中央是一片汪洋的大海喔！<br>
-                    我們一般稱北極是一個範圍，稱為「北極圈」<br><br>
-                    北極圈是為北緯 66°34′ 的假想圈，範圍內涵蓋許多不同國家。</p>
-            </div>
-            <img class="notfullpicture" src="image/01.png" alt="">
+      </div>
+      <!--你知道北極其實是一片海嗎？-->
+      <div class="section-wrapper">
+        <div>
+          <div class="containertitle">
+            <h1 class="haveovalh1">你知道北極圈其實是一片海嗎？</h1>
+          </div>
+        </div>
+        <div>
+          <p class="linetext">
+            北極不像南極是陸地，北極中央是一片汪洋的大海喔！<br />
+            我們一般稱北極是一個範圍，稱為「北極圈」<br /><br />
+            北極圈是為北緯 66°34′ 的假想圈，範圍內涵蓋許多不同國家。
+          </p>
+        </div>
+        <img class="notfullpicture" src="image/01.png" alt="" />
 
-            <!--永晝永夜-->
-            <div>
-                <div class="containertitle">
-                    <h1 class="haveovalh1">北極圈的永晝和永夜？</h1>
-                </div>
-                <div>
-                    <p class="linetext">是指一天24小時之內全都白天(永晝)或黑夜(永夜)。<br>
-                        北極點附近的地方一年有近一半的時間是永晝，另一半是永夜。<br>
-                        靠近北極圈的地方則只有幾天的永晝永夜。
-                    </p>
-                </div>
-                <img class="notfullpicture" src="image/02.gif" alt="" />
-                <p>挪威永晝的一天</p>
-            </div>
+        <!--永晝永夜-->
+        <div>
+          <div class="containertitle">
+            <h1 class="haveovalh1">北極圈的永晝和永夜？</h1>
+          </div>
+          <div>
+            <p class="linetext">
+              是指一天24小時之內全都白天(永晝)或黑夜(永夜)。<br />
+              北極點附近的地方一年有近一半的時間是永晝，另一半是永夜。<br />
+              靠近北極圈的地方則只有幾天的永晝永夜。
+            </p>
+          </div>
+          <img class="notfullpicture" src="image/02.gif" alt="" />
+          <p>挪威永晝的一天</p>
         </div>
+      </div>
     </section>
 
     <section id="ch02">
-        <div class="henderbackground" id="ch2">
-            <div class="henderbackground" data-list="ch02"></div>
-            <div class="headerarea">
-                <div class="title">
-                    <p class="title0">0</p>
-                    <p class="title1">2</p>
-                </div>
-                <div class="headerbar">
-                    <h1 class="henderh1">北極動物介紹</h1>
-                    <p class="henderp">Introduction to Animals of the Arctic Circle</p>
-                </div>
-            </div>
+      <div class="henderbackground" id="ch2">
+        <div class="henderbackground" data-list="ch02"></div>
+        <div class="headerarea">
+          <div class="title">
+            <p class="title0">0</p>
+            <p class="title1">2</p>
+          </div>
+          <div class="headerbar">
+            <h1 class="henderh1">北極動物介紹</h1>
+            <p class="henderp">Introduction to Animals of the Arctic Circle</p>
+          </div>
         </div>
-        <div class="section-wrapper">
-            <!--動物知多少 -->
-            <div class="containertitle">
-                <h1 class="haveovalh1 ">北極圈動物知多少？</h1>
-            </div>
-            <div class="scrolling">
-                <p class="linetext ">雖然北極看起來一片白茫茫，人跡罕至，<br> 但其實北極孕育達 21,000 已知物種，有許多多彩多姿的生物生存此地。</p>
-                <p class="contenttext">來點點看 <span class="point -inline"></span> 更認識牠們一點吧！</p>
-            </div>
-            <div class="canvas">
-                <div class="mover">
-                    <img class="view" src="image/03.png" alt="">
-                    <div class="points">
-                        <div class="point btn_modal" name="海鸚" style="margin-left: -44%; margin-top: -20%;"></div>
-                        <div class="point btn_modal" name="旅鼠" style="margin-left: -23%; margin-top: -26%;"></div>
-                        <div class="point btn_modal" name="獨角鯨" style="margin-left: -10%; margin-top: -3%;"></div>
-                        <div class="point btn_modal" name="北極狐" style="margin-left: -38%; margin-top: 10%;"></div>
-                        <div class="point btn_modal" name="海豹" style="margin-left: 3%; margin-top: 7%;"></div>
-                        <div class="point btn_modal" name="麝牛" style="margin-left: 15%; margin-top: -18%;"></div>
-                        <div class="point btn_modal" name="北極熊" style="margin-left: 30%; margin-top: -12%;"></div>
-                        <div class="point btn_modal" name="雪鴞" style="margin-left: 34%; margin-top: -27%;"></div>
-                        <div class="point btn_modal" name="雪貂" style="margin-left: 40%; margin-top: 14%;"></div>
-                    </div>
-                </div>
-            </div>
-            <!--到時候多張照片要重疊 -->
+      </div>
+      <div class="section-wrapper">
+        <!--動物知多少 -->
+        <div class="containertitle">
+          <h1 class="haveovalh1">北極圈動物知多少？</h1>
         </div>
-
+        <div class="scrolling">
+          <p class="linetext">
+            雖然北極看起來一片白茫茫，人跡罕至，<br />
+            但其實北極孕育達 21,000 已知物種，有許多多彩多姿的生物生存此地。
+          </p>
+          <p class="contenttext">
+            來點點看 <span class="point -inline"></span> 更認識牠們一點吧！
+          </p>
+        </div>
+        <div class="canvas">
+          <div class="mover">
+            <img class="view" src="image/03.png" alt="" />
+            <div class="points">
+              <div
+                class="point btn_modal"
+                data-name="海鸚"
+                style="margin-left: -44%; margin-top: -20%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="旅鼠"
+                style="margin-left: -23%; margin-top: -26%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="獨角鯨"
+                style="margin-left: -10%; margin-top: -3%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="北極狐"
+                style="margin-left: -38%; margin-top: 10%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="海豹"
+                style="margin-left: 3%; margin-top: 7%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="麝牛"
+                style="margin-left: 15%; margin-top: -18%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="北極熊"
+                style="margin-left: 30%; margin-top: -12%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="雪鴞"
+                style="margin-left: 34%; margin-top: -27%"
+              ></div>
+              <div
+                class="point btn_modal"
+                data-name="雪貂"
+                style="margin-left: 40%; margin-top: 14%"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <!--到時候多張照片要重疊 -->
+      </div>
     </section>
 
     <section id="ch03">
-        <div class="henderbackground" id="ch3">
-            <div class="henderbackground" data-list="ch03"></div>
-            <div class="headerarea">
-                <div class="title">
-                    <p class="title0">0</p>
-                    <p class="title1">3</p>
-                </div>
-                <div class="headerbar">
-                    <h1 class="henderh1">北極環境問題</h1>
-                    <p class="henderp">Environmental issues in the Arctic Circle</p>
-                </div>
-            </div>
+      <div class="henderbackground" id="ch3">
+        <div class="henderbackground" data-list="ch03"></div>
+        <div class="headerarea">
+          <div class="title">
+            <p class="title0">0</p>
+            <p class="title1">3</p>
+          </div>
+          <div class="headerbar">
+            <h1 class="henderh1">北極環境問題</h1>
+            <p class="henderp">Environmental issues in the Arctic Circle</p>
+          </div>
         </div>
-        <div class="section-wrapper">
-            <!--海冰是北極生態的保育者 -->
-            <div class="containertitle">
-                <h1 class="haveovalh1">海冰是北極生態的保育者</h1>
-            </div>
-            <div>
-                <p class="linetext">海冰的存在，可不單單只是為了北極熊<br>
-                    還可以助於其他的極地動物狩獵、繁殖、遷徙和庇護等</p>
-            </div>
-            <div class="watercanva">
-                <p class="watermark">01</p>
-            </div>
-            <div class="group">
-                <img class="picture-04" src="image/04.PNG" alt="">
-                <h2 class="minpurple2 textleft-2">這些活動，都必須仰賴足夠多的海冰，<br>　　　　　　　　北極圈才能有建全的生態。 </h2>
-                <h2 style="margin-top: 50px;" class="minpurple2-1 textleft-2">這些活動，都必須仰賴足夠多的海冰<br>　　　　　　北極圈才能有建全的生態。
-                </h2>
-            </div>
-            <div>
-                <img id="animal-1" src="image/0.1.PNG" alt="">
-            </div>
-            <!--警告！北極海冰已經減少三分之二-->
-            <div class="containertitle">
-                <h1 class="haveovalh1">警告！北極海冰已經減少三分之二</h1>
-            </div>
-            <div>
-                <p class="linetext">2020年，科學家記錄到北極海冰面積的史上第二低<br>
-                    夏季的北極海冰正在減少，而且速度比天氣預報模型的預測還快。
-                </p>
-            </div>
-            <div class="watercanva">
-                <p class="watermark">02</p>
-            </div>
-            <div class="group">
-                <h2 class="minpurple">推測25年內，北極海的夏季將無海冰</h2>
-            </div>
-            <div class="mapgroup_2">
-                <div>
-                    <img class="mapice" src="image/06.gif" alt="">
-                </div>
-                <div class="textleft-2">
-                    <h5>25年來，夏季的海冰已融化：</h5>
-                    <h1 class="t_km"><span class="bigtext">50萬 </span>平方英里</h1>
-                    <button class="main_button btn_modal" name="那麼大的面積是什麼樣的想像">那麼大的面積是什麼樣的想像</button>
-                </div>
-            </div>
-
-            <!--北極沒有海冰會怎樣？-->
-            <div class="containertitle h1-sea">
-                <h1 class="haveovalh1">北極沒有海冰會怎樣？</h1>
-            </div>
-            <div class="watercanva">
-                <p class="watermark">03</p>
-            </div>
-            <p class="p-sea">海冰的存在不但有助於極地動物的生存，也能幫助調節地球的溫度。</p>
-            <div class="group" style="margin-bottom: 0;">
-                <div class="mapgroup_2">
-                    <div class="textleft-1">
-                        <h2 class="slash h2-sea">海冰就像是一面平滑的大鏡子，<br>
-                            要是海冰融化，北極海會直接吸收太陽光的熱量。<br>
-                            北極圈的溫度也會慢慢上升，影響所有的生態環境。</h2>
-                    </div>
-                    <div>
-                        <img class="mapice-2" src="image/07.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div></div>
-
-            <!--紅色警戒！阻止全球溫度上升！-->
-            <img id="animal-2" src="image/0.2.PNG" alt="">
-            <div class="containertitle-4 h1-red">
-                <h1 class="haveovalh1-3 textleft-2">紅色警戒！<br> 阻止全球溫度上升！</h1>
-            </div>
-            <div class="watercanva">
-                <p class="watermark">04</p>
-            </div>
-            <div>
-                <p class="linetext">全球已有33至36億人口暴露在極易受到氣候變遷影響的環境中，<br>
-                    呼籲各國應加速採取行動，全球暖化已在2000年後加劇
-                </p>
-            </div>
-            <h2 class="secondh2">暖化必須控制在<span class="bigtext">1.5°C</span> 以內<br>
-                以大幅減少大自然及人類的損失
-            </h2>
-            <div class="group">
-                <p class="chart textleft-2-1">根據聯合國政府間氣候變遷專門委員會（IPCC）<br>
-                    2021年的報告，全球平均溫度上升：</p>
-                <img class="mapice-2" src="image/chart.png" alt="">
-            </div>
-            <div class="group">
-                <h2 class="minpurple2 textleft">意味著破紀錄的高溫、強降雨、<br>　　　　　乾旱等極端天氣事件，將更頻繁地闖入我們的生活。</h2>
-                <h2 class="minpurple2-1 textleft">意味著破紀錄的高溫、強降雨、乾旱<br>極端天氣事件，將更頻繁地闖入我們的生活。</h2>
-            </div>
-
-            <!--我家還能住多久？台灣這些地方將會被淹沒-->
-            <div class="group_2">
-                <div class="containertitle-3" style="margin-right: 10%;">
-                    <h1 class="haveovalh1-4 textleft-2">
-                        我家還能住多久？<br>台灣這些地方將會被淹沒
-                    </h1>
-                    <div class="watercanva">
-                        <p class="watermark">05</p>
-                    </div>
-                    <div>
-                        <p class="slash_2">
-                            若北極的海冰全融化，<br>大台北地區有 3 分之1的土地都會被淹沒。<br>
-                            以面積來看台南淹沒426平方公里為六都最多，<br>
-                            接下來六都未來將只剩下桃園和台中。
-                        </p>
-                    </div>
-                </div>
-                <div class="samp">
-                    <div class="seamap"></div>
-                    <div class="flagdesc" style="padding: 20px 0;">海平面上升高度</div>
-                    <div class="buttons_sea">
-                        <button class="btn_sea sea1">0m</button>
-                        <button class="btn_sea sea2">20m</button>
-                        <button class="btn_sea sea3">40m</button>
-                        <button class="btn_sea sea4">60m</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="backgroundpurple">
-                <h1 class="purple">4分之1的台灣人，將會成為「環境難民」。</h1>
-                <h1 class="purple-2">4分之1的台灣人<br>將會成為「環境難民」</h1>
-            </div>
-
-            <!--地震、海嘯機率大增-->
-            <div class="mapgroup">
-                <div class="g3_6">
-                    <div class="containertitle-5">
-                        <h1 class="haveovalh1_2">地震、海嘯機率大增</h1>
-                        <div class="watercanva">
-                            <p class="watermark">06</p>
-                        </div>
-                    </div>
-                    <p class="textleft" style="margin-left: 55px;">國際地質學家擔憂，全球暖化引起的冰河融化、海面上升，<br>
-                        會釋放地殼裡被壓抑的能量，引發劇烈地質變化，<br>
-                        提高地震、海嘯發生的機率。
-                    </p>
-                    <p class="textleft-2">國際地質學家擔憂，全球暖化引起的冰河融化、海面上升，<br>
-                        會釋放地殼裡被壓抑的能量，<br>引發劇烈地質變化，提高地震、海嘯發生的機率。
-                    </p>
-                </div>
-                <div class="g3_6">
-                    <div style="margin-left: 70px;">
-                        <p class="textleft-4"><span class="text_sm-2">1993 ~ 2006年 </span>全球的大地震次數增加</p>
-                    </div>
-                    <h1 class="bigtext textleft-3">超過三倍</h1>
-
-                </div>
-            </div>
-            <!--生態斷鏈，物種逃難-->
-            <div class="group-5">
-                <div class="textleft">
-                    <p style="margin-bottom: -40px;"><span class="text_sm">全球珊瑚礁 </span>遭受到嚴重破壞</p>
-                    <h1 class="bigtext_20">20%</h1>
-                </div>
-                <div class="textleft-2">
-                    <p style="margin: 10px 0 0 -20%;"><span class="text_sm-2">全球珊瑚礁 </span>遭受到嚴重破壞</p>
-                    <h1 style="margin: 10px 0 0 -30%;" class="bigtext_20">20%</h1>
-                </div>
-                <div>
-                    <div class="containertitle_07">
-
-                        <h1 class="haveovalh1 textleft-2" style="bottom: 80px; margin:100px 0 0 20%;">生態斷鏈，物種逃難</h1>
-                        <div class="watercanva">
-                            <p class="watermark">07</p>
-                        </div>
-                        <p class="slash textleft">因暖化及二氧化碳濃度增高使海水酸化，<br>
-                            全球珊瑚礁受到嚴重破壞白化死亡，<br>
-                            並增生毒海藻。魚類吃下毒藻，人類再吃魚而中毒。
-                        </p>
-                        <p class="slash textleft-2">因暖化及二氧化碳濃度增高使海水酸化，<br>
-                            全球珊瑚礁受到嚴重破壞白化死亡，
-                            並增生毒海藻。<br>魚類吃下毒藻，人類再吃魚而中毒。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="group-1">
-                <div class="picture3">
-                    <img src="image/10.PNG" alt="">
-                    <p class="flagdesc">毒海藻</p>
-                </div>
-                <div class="picture3" style="top: 40px;">
-                    <img src="image/10-1.png" alt="">
-                    <p class="flagdesc">魚吃藻</p>
-                </div>
-                <div class="picture3" style="top: 60px;">
-                    <img src="image/10-2.png" alt="">
-                    <p class="flagdesc">人吃魚</p>
-                </div>
-            </div>
-
-            <div class="group">
-                <h2 class="minpurple textleft-1">據統計，全球每年有五萬人食用珊瑚礁魚類中毒，<br>
-                    　　　　　　　　　台灣民眾嗜食的石斑魚，就是其中之一。
-                </h2>
-                <h2 class="minpurple-3 textleft">據統計，全球每年有五萬人食用珊瑚礁魚類中毒<br>
-                    　台灣民眾嗜食的石斑魚，就是其中之一。
-                </h2>
-            </div>
-
-            <!--蚊子北伐，公衛拉警報-->
-            <div class="containertitle">
-                <h1 class="haveovalh1">蚊子北伐，公衛拉警報</h1>
-                <div class="watercanva">
-                    <p class="watermark">08</p>
-                </div>
-            </div>
-            <div>
-                <p class="linetext">對溫度最敏感的，不是北極熊，而是蚊子。<br>
-
-                </p>
-            </div>
-            <div class="group">
-                <img class="img3_8" src="image/11.PNG" alt="">
-                <p class="textleft-1">成大環境醫研所教授蘇慧貞研究，<br>
-                    溫度增加會改變疾病的分布。<br>
-                    過去只存在於北回歸線以南的登革熱，<br><br>
-                </p>
-
-                <h2 class="minpurple textleft-1"> 當氣溫上升一度，埃及斑蚊就會「北伐」，攻克台中和台北。</h2>
-                <p class="textleft-5">成大環境醫研所教授蘇慧貞研究，<br>
-                    溫度增加會改變疾病的分布。<br>
-                    過去只存在於北回歸線以南的登革熱
-                </p>
-            </div>
-
-            <!--夏夜暴熱，冬天點蚊香-->
-            <div class="t3_9">
-                <div class="containertitle-6">
-                    <h1 class="haveovalh1-5 textleft-2">夏夜暴熱，<br>　　冬天點蚊香</h1>
-                    <div class="watercanva">
-                        <p class="watermark">09</p>
-                    </div>
-                </div>
-                <img id="animal-3" src="image/0.3.PNG" alt="">
-                <div>
-                    <p style="margin: 0 0 10px 0;" class="slash textleft-1">許晃雄注意到，在攝氏二十幾度最活躍的蚊子，冬天活動力還比夏天強。<br>
-                        以後可能變成夏天氣溫高到沒有蚊子，冬天反而要點蚊香。<br><br>
-                        台灣未來的夏天，也會比現在更熱。
-                    </p>
-                    <p style="margin: 0 0 10px 0;" class="slash textleft-6">許晃雄注意到，在攝氏二十幾度最活躍的蚊子，冬天活動力還比夏天強。<br>
-                        以後可能變成夏天氣溫高到沒有蚊子，冬天反而要點蚊香。<br>
-                        台灣未來的夏天，也會比現在更熱。
-                    </p>
-                </div>
-            </div>
-            <img id="animal-4" src="image/0.4.png" alt="">
-            <div class="group">
-                <h2 class="minpurple_gray textleft-1">未來十年，台北夏季出現 <span class="bigtext">35°C</span> 熱浪的日子，<br>
-                    將從目前的二十幾天增加到四十天。
-                </h2>
-                <h2 class="minpurple_gray-2 textleft-6">未來十年，<br>台北夏季出現 <span class="bigtext">35°C</span> 熱浪的日子，<br>
-                    將從目前的二十幾天增加到四十天。
-                </h2>
-            </div>
+      </div>
+      <div class="section-wrapper">
+        <!--海冰是北極生態的保育者 -->
+        <div class="containertitle">
+          <h1 class="haveovalh1">海冰是北極生態的保育者</h1>
         </div>
+        <div>
+          <p class="linetext">
+            海冰的存在，可不單單只是為了北極熊<br />
+            還可以助於其他的極地動物狩獵、繁殖、遷徙和庇護等
+          </p>
+        </div>
+        <div class="watercanva">
+          <p class="watermark">01</p>
+        </div>
+        <div class="group">
+          <img class="picture-04" src="image/04.PNG" alt="" />
+          <h2 class="minpurple2 textleft-2">
+            這些活動，都必須仰賴足夠多的海冰，<br />　　　　　　　　北極圈才能有建全的生態。
+          </h2>
+          <h2 style="margin-top: 50px" class="minpurple2-1 textleft-2">
+            這些活動，都必須仰賴足夠多的海冰<br />　　　　　　北極圈才能有建全的生態。
+          </h2>
+        </div>
+        <div>
+          <img id="animal-1" src="image/0.1.PNG" alt="" />
+        </div>
+        <!--警告！北極海冰已經減少三分之二-->
+        <div class="containertitle">
+          <h1 class="haveovalh1">警告！北極海冰已經減少三分之二</h1>
+        </div>
+        <div>
+          <p class="linetext">
+            2020年，科學家記錄到北極海冰面積的史上第二低<br />
+            夏季的北極海冰正在減少，而且速度比天氣預報模型的預測還快。
+          </p>
+        </div>
+        <div class="watercanva">
+          <p class="watermark">02</p>
+        </div>
+        <div class="group">
+          <h2 class="minpurple">推測25年內，北極海的夏季將無海冰</h2>
+        </div>
+        <div class="mapgroup_2">
+          <div>
+            <img class="mapice" src="image/06.gif" alt="" />
+          </div>
+          <div class="textleft-2">
+            <h5>25年來，夏季的海冰已融化：</h5>
+            <h1 class="t_km"><span class="bigtext">50萬 </span>平方英里</h1>
+            <button
+              class="btn_blue btn_modal"
+              data-name="那麼大的面積是什麼樣的想像"
+              style="margin: 0 25%;"
+            >
+              那麼大的面積是什麼樣的想像
+            </button>
+          </div>
+        </div>
+
+        <!--北極沒有海冰會怎樣？-->
+        <div class="containertitle h1-sea">
+          <h1 class="haveovalh1">北極沒有海冰會怎樣？</h1>
+        </div>
+        <div class="watercanva">
+          <p class="watermark">03</p>
+        </div>
+        <p class="p-sea">
+          海冰的存在不但有助於極地動物的生存，也能幫助調節地球的溫度。
+        </p>
+        <div class="group" style="margin-bottom: 0">
+          <div class="mapgroup_2">
+            <div class="textleft-1">
+              <h2 class="slash h2-sea">
+                海冰就像是一面平滑的大鏡子，<br />
+                要是海冰融化，北極海會直接吸收太陽光的熱量。<br />
+                北極圈的溫度也會慢慢上升，影響所有的生態環境。
+              </h2>
+            </div>
+            <div>
+              <img class="mapice-2" src="image/07.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div></div>
+
+        <!--紅色警戒！阻止全球溫度上升！-->
+        <img id="animal-2" src="image/0.2.PNG" alt="" />
+        <div class="containertitle-4 h1-red">
+          <h1 class="haveovalh1-3 textleft-2">
+            紅色警戒！<br />
+            阻止全球溫度上升！
+          </h1>
+        </div>
+        <div class="watercanva">
+          <p class="watermark">04</p>
+        </div>
+        <div>
+          <p class="linetext">
+            全球已有33至36億人口暴露在極易受到氣候變遷影響的環境中，<br />
+            呼籲各國應加速採取行動，全球暖化已在2000年後加劇
+          </p>
+        </div>
+        <h2 class="secondh2">
+          暖化必須控制在<span class="bigtext">1.5°C</span> 以內<br />
+          以大幅減少大自然及人類的損失
+        </h2>
+        <div class="group">
+          <p class="chart textleft-2-1">
+            根據聯合國政府間氣候變遷專門委員會（IPCC）<br />
+            2021年的報告，全球平均溫度上升：
+          </p>
+          <img class="mapice-2" src="image/chart.png" alt="" />
+        </div>
+        <div class="group">
+          <h2 class="minpurple2 textleft">
+            意味著破紀錄的高溫、強降雨、<br />　　　　　乾旱等極端天氣事件，將更頻繁地闖入我們的生活。
+          </h2>
+          <h2 class="minpurple2-1 textleft">
+            意味著破紀錄的高溫、強降雨、乾旱<br />極端天氣事件，將更頻繁地闖入我們的生活。
+          </h2>
+        </div>
+
+        <!--我家還能住多久？台灣這些地方將會被淹沒-->
+        <div class="group_2">
+          <div class="containertitle-3" style="margin-right: 10%">
+            <h1 class="haveovalh1-4 textleft-2">
+              我家還能住多久？<br />台灣這些地方將會被淹沒
+            </h1>
+            <div class="watercanva">
+              <p class="watermark">05</p>
+            </div>
+            <div>
+              <p class="slash_2">
+                若北極的海冰全融化，<br />大台北地區有 3
+                分之1的土地都會被淹沒。<br />
+                以面積來看台南淹沒426平方公里為六都最多，<br />
+                接下來六都未來將只剩下桃園和台中。
+              </p>
+            </div>
+          </div>
+          <div class="samp">
+            <div class="seamap"></div>
+            <div class="flagdesc" style="padding: 20px 0">海平面上升高度</div>
+            <div class="buttons_sea">
+              <button class="btn_blue btn-sea" data-target="">0m</button>
+              <button class="btn_blue btn-sea" data-target="map2">20m</button>
+              <button class="btn_blue btn-sea" data-target="map3">40m</button>
+              <button class="btn_blue btn-sea" data-target="map4">60m</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="backgroundpurple">
+          <h1 class="purple">4分之1的台灣人，將會成為「環境難民」。</h1>
+          <h1 class="purple-2">4分之1的台灣人<br />將會成為「環境難民」</h1>
+        </div>
+
+        <!--地震、海嘯機率大增-->
+        <div class="mapgroup">
+          <div class="g3_6">
+            <div class="containertitle-5">
+              <h1 class="haveovalh1_2">地震、海嘯機率大增</h1>
+              <div class="watercanva">
+                <p class="watermark">06</p>
+              </div>
+            </div>
+            <p class="textleft" style="margin-left: 55px">
+              國際地質學家擔憂，全球暖化引起的冰河融化、海面上升，<br />
+              會釋放地殼裡被壓抑的能量，引發劇烈地質變化，<br />
+              提高地震、海嘯發生的機率。
+            </p>
+            <p class="textleft-2">
+              國際地質學家擔憂，全球暖化引起的冰河融化、海面上升，<br />
+              會釋放地殼裡被壓抑的能量，<br />引發劇烈地質變化，提高地震、海嘯發生的機率。
+            </p>
+          </div>
+          <div class="g3_6">
+            <div style="margin-left: 70px">
+              <p class="textleft-4">
+                <span class="text_sm-2">1993 ~ 2006年 </span
+                >全球的大地震次數增加
+              </p>
+            </div>
+            <h1 class="bigtext textleft-3">超過三倍</h1>
+          </div>
+        </div>
+        <!--生態斷鏈，物種逃難-->
+        <div class="group-5">
+          <div class="textleft">
+            <p style="margin-bottom: -40px">
+              <span class="text_sm">全球珊瑚礁 </span>遭受到嚴重破壞
+            </p>
+            <h1 class="bigtext_20">20%</h1>
+          </div>
+          <div class="textleft-2">
+            <p style="margin: 10px 0 0 -20%">
+              <span class="text_sm-2">全球珊瑚礁 </span>遭受到嚴重破壞
+            </p>
+            <h1 style="margin: 10px 0 0 -30%" class="bigtext_20">20%</h1>
+          </div>
+          <div>
+            <div class="containertitle_07">
+              <h1
+                class="haveovalh1 textleft-2"
+                style="bottom: 80px; margin: 100px 0 0 20%"
+              >
+                生態斷鏈，物種逃難
+              </h1>
+              <div class="watercanva">
+                <p class="watermark">07</p>
+              </div>
+              <p class="slash textleft">
+                因暖化及二氧化碳濃度增高使海水酸化，<br />
+                全球珊瑚礁受到嚴重破壞白化死亡，<br />
+                並增生毒海藻。魚類吃下毒藻，人類再吃魚而中毒。
+              </p>
+              <p class="slash textleft-2">
+                因暖化及二氧化碳濃度增高使海水酸化，<br />
+                全球珊瑚礁受到嚴重破壞白化死亡， 並增生毒海藻。<br />魚類吃下毒藻，人類再吃魚而中毒。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="group-1">
+          <div class="picture3">
+            <img src="image/10.PNG" alt="" />
+            <p class="flagdesc">毒海藻</p>
+          </div>
+          <div class="picture3" style="top: 40px">
+            <img src="image/10-1.png" alt="" />
+            <p class="flagdesc">魚吃藻</p>
+          </div>
+          <div class="picture3" style="top: 60px">
+            <img src="image/10-2.png" alt="" />
+            <p class="flagdesc">人吃魚</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <h2 class="minpurple textleft-1">
+            據統計，全球每年有五萬人食用珊瑚礁魚類中毒，<br />
+            　　　　　　　　　台灣民眾嗜食的石斑魚，就是其中之一。
+          </h2>
+          <h2 class="minpurple-3 textleft">
+            據統計，全球每年有五萬人食用珊瑚礁魚類中毒<br />
+            　台灣民眾嗜食的石斑魚，就是其中之一。
+          </h2>
+        </div>
+
+        <!--蚊子北伐，公衛拉警報-->
+        <div class="containertitle">
+          <h1 class="haveovalh1">蚊子北伐，公衛拉警報</h1>
+          <div class="watercanva">
+            <p class="watermark">08</p>
+          </div>
+        </div>
+        <div>
+          <p class="linetext">對溫度最敏感的，不是北極熊，而是蚊子。<br /></p>
+        </div>
+        <div class="group">
+          <img class="img3_8" src="image/11.PNG" alt="" />
+          <p class="textleft-1">
+            成大環境醫研所教授蘇慧貞研究，<br />
+            溫度增加會改變疾病的分布。<br />
+            過去只存在於北回歸線以南的登革熱，<br /><br />
+          </p>
+
+          <h2 class="minpurple textleft-1">
+            當氣溫上升一度，埃及斑蚊就會「北伐」，攻克台中和台北。
+          </h2>
+          <p class="textleft-5">
+            成大環境醫研所教授蘇慧貞研究，<br />
+            溫度增加會改變疾病的分布。<br />
+            過去只存在於北回歸線以南的登革熱
+          </p>
+        </div>
+
+        <!--夏夜暴熱，冬天點蚊香-->
+        <div class="t3_9">
+          <div class="containertitle-6">
+            <h1 class="haveovalh1-5 textleft-2">
+              夏夜暴熱，<br />　　冬天點蚊香
+            </h1>
+            <div class="watercanva">
+              <p class="watermark">09</p>
+            </div>
+          </div>
+          <img id="animal-3" src="image/0.3.PNG" alt="" />
+          <div>
+            <p style="margin: 0 0 10px 0" class="slash textleft-1">
+              許晃雄注意到，在攝氏二十幾度最活躍的蚊子，冬天活動力還比夏天強。<br />
+              以後可能變成夏天氣溫高到沒有蚊子，冬天反而要點蚊香。<br /><br />
+              台灣未來的夏天，也會比現在更熱。
+            </p>
+            <p style="margin: 0 0 10px 0" class="slash textleft-6">
+              許晃雄注意到，在攝氏二十幾度最活躍的蚊子，冬天活動力還比夏天強。<br />
+              以後可能變成夏天氣溫高到沒有蚊子，冬天反而要點蚊香。<br />
+              台灣未來的夏天，也會比現在更熱。
+            </p>
+          </div>
+        </div>
+        <img id="animal-4" src="image/0.4.png" alt="" />
+        <div class="group">
+          <h2 class="minpurple_gray textleft-1">
+            未來十年，台北夏季出現
+            <span class="bigtext">35°C</span> 熱浪的日子，<br />
+            將從目前的二十幾天增加到四十天。
+          </h2>
+          <h2 class="minpurple_gray-2 textleft-6">
+            未來十年，<br />台北夏季出現
+            <span class="bigtext">35°C</span> 熱浪的日子，<br />
+            將從目前的二十幾天增加到四十天。
+          </h2>
+        </div>
+      </div>
     </section>
 
     <section id="ch04">
-        <div class="henderbackground" id="ch4">
-            <div class="henderbackground" data-list="ch04"></div>
-            <div class="headerarea">
-                <div class="title">
-                    <p class="title0">0</p>
-                    <p class="title1">4</p>
-                </div>
-                <div class="headerbar">
-                    <h1 class="henderh1">我們可以怎麼做？</h1>
-                    <p class="henderp">What can we do?</p>
-                </div>
-            </div>
+      <div class="henderbackground" id="ch4">
+        <div class="henderbackground" data-list="ch04"></div>
+        <div class="headerarea">
+          <div class="title">
+            <p class="title0">0</p>
+            <p class="title1">4</p>
+          </div>
+          <div class="headerbar">
+            <h1 class="henderh1">我們可以怎麼做？</h1>
+            <p class="henderp">What can we do?</p>
+          </div>
         </div>
-        <!--那一個人可以做些什麼呢？-->
-        <div class="section-wrapper">
-            <div class="group-1 full">
-                <div class="g4_1">
-                    <p class="slash4_1 textleft-2">我們每個人每天的日常活動，就是全球暖化的推手。<br>
-                        人類的首要行動，限制石油、煤炭和天然氣等化石燃料的使用，<br>
-                        並且改用更清潔的可再生能源
-                    </p>
-                    <p class="minpurple_gray-3">但這些不是我們自己一個人能達成的...</p>
-                    <h2 class="bigpurple">那一個人可以做些什麼呢？</h2>
-                </div>
-                <div class="g4_2 lgnone">
-                    <img src="image/12.png" alt="">
-                    <div class="flagdesc3">限制石油</div>
-                    <br>
-                    <img src="image/12-1.png" alt="">
-                    <div class="flagdesc3">化石燃料NO</div>
-                    <br>
-                    <img src="image/12-2.png" alt="">
-                    <div class="flagdesc3">再生能源</div>
-                </div>
-            </div>
-            <div class="g4_2 lgblock">
-                <div class="picture3">
-                    <img src="image/12.png" alt="">
-                    <div class="flagdesc3">限制石油</div>
-                </div>
-                <div class="picture3">
-                    <img src="image/12-1.png" alt="">
-                    <div class="flagdesc3">化石燃料NO</div>
-                </div>
-                <div class="picture3">
-                    <img src="image/12-2.png" alt="">
-                    <div class="flagdesc3">再生能源</div>
-                </div>
-            </div>
+      </div>
+      <!--那一個人可以做些什麼呢？-->
+      <div class="section-wrapper">
+        <div class="group-1 full">
+          <div class="g4_1">
+            <p class="slash4_1 textleft-2">
+              我們每個人每天的日常活動，就是全球暖化的推手。<br />
+              人類的首要行動，限制石油、煤炭和天然氣等化石燃料的使用，<br />
+              並且改用更清潔的可再生能源
+            </p>
+            <p class="minpurple_gray-3">但這些不是我們自己一個人能達成的...</p>
+            <h2 class="bigpurple">那一個人可以做些什麼呢？</h2>
+          </div>
+          <div class="g4_2 lgnone">
+            <img src="image/12.png" alt="" />
+            <div class="flagdesc3">限制石油</div>
+            <br />
+            <img src="image/12-1.png" alt="" />
+            <div class="flagdesc3">化石燃料NO</div>
+            <br />
+            <img src="image/12-2.png" alt="" />
+            <div class="flagdesc3">再生能源</div>
+          </div>
         </div>
+        <div class="g4_2 lgblock">
+          <div class="picture3">
+            <img src="image/12.png" alt="" />
+            <div class="flagdesc3">限制石油</div>
+          </div>
+          <div class="picture3">
+            <img src="image/12-1.png" alt="" />
+            <div class="flagdesc3">化石燃料NO</div>
+          </div>
+          <div class="picture3">
+            <img src="image/12-2.png" alt="" />
+            <div class="flagdesc3">再生能源</div>
+          </div>
+        </div>
+      </div>
 
-        <!--重複利用降低物慾-->
-        <div class="tipsbackground">
-            <p class="flagdesc2" style="margin-top: 50px;">－ 點擊圖示來看更多！ －</p>
-            <div class="group-1">
-                <div class="picturex34 w1 btn_modal" name="親近再生能源">
-                    <img src="image/13.png" alt="">
-                    <div class="flagdesc2"><br>親近再生能源</div>
-                </div>
-                <div class="picturex34 w2 btn_modal" name="轉用電動車">
-                    <img src="image/13-1.png" alt="">
-                    <div class="flagdesc2"><br>轉用電動車</div>
-                </div>
-                <div class="picturex34 w3 btn_modal" name="重複利用降低物慾">
-                    <img src="image/13-2.png" alt="">
-                    <div class="flagdesc2"><br>重複利用降低物慾</div>
-                </div>
-            </div>
-            <div class="group-1">
-                <div class="picturex34 w4 btn_modal" name="培養少肉多蔬">
-                    <img src="image/13-3.png" alt="">
-                    <div class="flagdesc2"><br>培養少肉多蔬<br>飲食習慣</div>
-                </div>
-                <div class="picturex34 w5 btn_modal" name="拒用塑膠製品">
-                    <img src="image/13-4.png" alt="">
-                    <div class="flagdesc2"><br>拒用塑膠製品</div>
-                </div>
-                <div class="picturex34 w6 btn_modal" name="使用節能家電">
-                    <img src="image/13-5.png" alt="">
-                    <div class="flagdesc2"><br>使用節能家電</div>
-                </div>
-                <div class="picturex34 w7 btn_modal" name="利用大眾運輸">
-                    <img src="image/13-6.png" alt="">
-                    <div class="flagdesc2"><br>利用大眾運輸</div>
-                </div>
-            </div>
+      <!--重複利用降低物慾-->
+      <div class="tipsbackground">
+        <p class="flagdesc2" style="margin-top: 50px">
+          － 點擊圖示來看更多！ －
+        </p>
+        <div class="group-1">
+          <div class="picturex34 w1 btn_modal" data-name="親近再生能源">
+            <img src="image/13.png" alt="" />
+            <div class="flagdesc2"><br />親近再生能源</div>
+          </div>
+          <div class="picturex34 w2 btn_modal" data-name="轉用電動車">
+            <img src="image/13-1.png" alt="" />
+            <div class="flagdesc2"><br />轉用電動車</div>
+          </div>
+          <div class="picturex34 w3 btn_modal" data-name="重複利用降低物慾">
+            <img src="image/13-2.png" alt="" />
+            <div class="flagdesc2"><br />重複利用降低物慾</div>
+          </div>
         </div>
+        <div class="group-1">
+          <div class="picturex34 w4 btn_modal" data-name="培養少肉多蔬">
+            <img src="image/13-3.png" alt="" />
+            <div class="flagdesc2"><br />培養少肉多蔬<br />飲食習慣</div>
+          </div>
+          <div class="picturex34 w5 btn_modal" data-name="拒用塑膠製品">
+            <img src="image/13-4.png" alt="" />
+            <div class="flagdesc2"><br />拒用塑膠製品</div>
+          </div>
+          <div class="picturex34 w6 btn_modal" data-name="使用節能家電">
+            <img src="image/13-5.png" alt="" />
+            <div class="flagdesc2"><br />使用節能家電</div>
+          </div>
+          <div class="picturex34 w7 btn_modal" data-name="利用大眾運輸">
+            <img src="image/13-6.png" alt="" />
+            <div class="flagdesc2"><br />利用大眾運輸</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="donate">
-        <!--捐款管道-->
-        <div class="titlegroup" id="donate">
-            <h1 class="h1sm">除此之外我們還可以做更多行動… !</h1>
-            <div class="group-1">
-                <div class="picturex34 smimg btn_modal" name="donate">
-                    <img src="image/14-2.png" alt="">
-                    <div class="flagdesc4">捐款管道</div>
-                    <div class="flagdesc4-2">微薄之力也能積少成多!</div>
-                </div>
-                <a href="shop.html" class="picturex34 smimg">
-                    <img src="image/14-1.png" alt="">
-                    <div class="flagdesc4">周邊</div>
-                    <div class="flagdesc4-2">營利30%會捐給綠色組織</div>
-                </a>
-                <a href="https://www.facebook.com/share.php?u=https://127.0.0.1:5502/OBJ/index.html"
-                    class="picturex34 smimg" target="_blank">
-                    <img src="image/14.png" alt="">
-                    <div class="flagdesc4">分享給朋友</div>
-                    <div class="flagdesc4-2">讓跟多人知道這樣的議題</div>
-                </a>
-            </div>
+      <!--捐款管道-->
+      <div class="titlegroup" id="donate">
+        <h1 class="h1sm">除此之外我們還可以做更多行動… !</h1>
+        <div class="group-1">
+          <div class="picturex34 smimg btn_modal" data-name="donate">
+            <img src="image/14-2.png" alt="" />
+            <div class="flagdesc4">捐款管道</div>
+            <div class="flagdesc4-2">微薄之力也能積少成多!</div>
+          </div>
+          <a href="shop.html" class="picturex34 smimg">
+            <img src="image/14-1.png" alt="" />
+            <div class="flagdesc4">周邊</div>
+            <div class="flagdesc4-2">營利30%會捐給綠色組織</div>
+          </a>
+          <a
+            href="https://www.facebook.com/share.php?u=https://127.0.0.1:5502/OBJ/index.html"
+            class="picturex34 smimg"
+            target="_blank"
+          >
+            <img src="image/14.png" alt="" />
+            <div class="flagdesc4">分享給朋友</div>
+            <div class="flagdesc4-2">讓跟多人知道這樣的議題</div>
+          </a>
         </div>
+      </div>
 
-        <!--「北極正在發生的事，將影響我們所有人。」-->
-        <div class="endpurple">
-            <div>
-                <h1 class="purple smsize">「北極正在發生的事，將影響我們所有人。」</h1>
-                <h1 class="purple-2 smsize">「北極正在發生的事，將影響我們所有人。」</h1>
-            </div>
+      <!--「北極正在發生的事，將影響我們所有人。」-->
+      <div class="endpurple">
+        <div>
+          <h1 class="purple smsize">
+            「北極正在發生的事，將影響我們所有人。」
+          </h1>
+          <h1 class="purple-2 smsize">
+            「北極正在發生的事，將影響我們所有人。」
+          </h1>
         </div>
+      </div>
     </section>
 
     <div class="titlegroup" id="team">
-        <h1 class="h1sm" style="margin-bottom: 50px;">製作團隊</h1>
-        <div>
-            <div class="teamgroup">
-                <div class="picturex34 smimg2">
-                    <img src="image/29.png" alt="">
-                    <div class="flagdesc5">柯靖鴻<span class="flagdesc5-3">/組長</span></div>
-                    <div class="flagdesc5-2">網頁優化/動態網頁/JS</div>
-                </div>
-                <div class="picturex34 smimg2">
-                    <img src="image/4.png" alt="">
-                    <div class="flagdesc5">廖儀樺<span class="flagdesc5-3">/組員</span></div>
-                    <div class="flagdesc5-2">人物插畫/網頁排版/動畫編排</div>
-                </div>
-                <div class="picturex34 smimg2">
-                    <img src="image/5.png" alt="">
-                    <div class="flagdesc5">林唯真<span class="flagdesc5-3">/組員</span></div>
-                    <div class="flagdesc5-2">動物插畫/主3D周邊</div>
-                </div>
+      <h1 class="h1sm" style="margin-bottom: 50px">製作團隊</h1>
+      <div>
+        <div class="teamgroup">
+          <div class="picturex34 smimg2">
+            <img src="image/29.png" alt="" />
+            <div class="flagdesc5">
+              柯靖鴻<span class="flagdesc5-3">/組長</span>
             </div>
-            <div class="teamgroup">
-                <div class="picturex34 smimg2">
-                    <img src="image/48.png" alt="">
-                    <div class="flagdesc5">葉品彥<span class="flagdesc5-3">/組員</span></div>
-                    <div class="flagdesc5-2">網頁切版/RWD/副3D周邊</div>
-                </div>
-                <div class="picturex34 smimg2">
-                    <img src="image/35.png" alt="">
-                    <div class="flagdesc5">陳昱廷<span class="flagdesc5-3">/組員</span></div>
-                    <div class="flagdesc5-2">背景、區域插畫/動畫編排</div>
-                </div>
+            <div class="flagdesc5-2">網頁優化/動態網頁/JS</div>
+          </div>
+          <div class="picturex34 smimg2">
+            <img src="image/4.png" alt="" />
+            <div class="flagdesc5">
+              廖儀樺<span class="flagdesc5-3">/組員</span>
             </div>
+            <div class="flagdesc5-2">人物插畫/網頁排版/動畫編排</div>
+          </div>
+          <div class="picturex34 smimg2">
+            <img src="image/5.png" alt="" />
+            <div class="flagdesc5">
+              林唯真<span class="flagdesc5-3">/組員</span>
+            </div>
+            <div class="flagdesc5-2">動物插畫/主3D周邊</div>
+          </div>
         </div>
+        <div class="teamgroup">
+          <div class="picturex34 smimg2">
+            <img src="image/48.png" alt="" />
+            <div class="flagdesc5">
+              葉品彥<span class="flagdesc5-3">/組員</span>
+            </div>
+            <div class="flagdesc5-2">網頁切版/RWD/副3D周邊</div>
+          </div>
+          <div class="picturex34 smimg2">
+            <img src="image/35.png" alt="" />
+            <div class="flagdesc5">
+              陳昱廷<span class="flagdesc5-3">/組員</span>
+            </div>
+            <div class="flagdesc5-2">背景、區域插畫/動畫編排</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 彈跳視窗 -->
     <!--點選跳出小知識 -->
     <div id="小知識">
-        <div class="modal tip" name="北極熊">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">POLAR BEAR POLAR BEAR POLAR BEAR
-                POLAR BEAR
-                POLAR BEAR POLAR BEAR POLAR BEAR POLAR BEAR POLAR BEAR </marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_1.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">北極熊</h1>
-                    <h2 class="tipssub">POLAR BEAR</h2>
-                    <p class="tipsp">陸地上最大的食肉動物，平均壽命25歲。<br>擁有極厚的脂肪及毛髮，北極熊的皮膚其實是黑色，<br>
-                        透明的毛髮在陽光及冰層的反射下看起來是白色。<br>主食以海豹維生，但需仰賴海冰來捕食。</p>
-                    <p class="tipsh3">因全球暖化而失去大片海冰棲地<br>　　面臨滅絕危機。北極熊可能在21世紀內絕種 !</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_1.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">為了要確認小熊未來可以獨立生活，母熊會將熊寶寶帶在身邊 2 年半 ~ 3 年<br>並傳授所有生存技能給熊寶寶。</p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+      <div class="_modal tip" data-name="北極熊">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >POLAR BEAR POLAR BEAR POLAR BEAR POLAR BEAR POLAR BEAR POLAR BEAR
+          POLAR BEAR POLAR BEAR POLAR BEAR
+        </marquee>
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_1.png" alt="" />
         </div>
-        <div class="modal tip" name="北極狐">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">ARCTIC FOX ARCTIC FOX ARCTIC FOX
-                ARCTIC FOX
-                ARCTIC FOX ARCTIC FOX ARCTIC FOX ARCTIC FOX ARCTIC FOX</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_2.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">北極狐</h1>
-                    <h2 class="tipssub">ARCTIC FOX</h2>
-                    <p class="tipsp">冰島唯一的陸地哺乳動物，壽命3 ~
-                        6年，<br>北極狐的主食是旅鼠，但也會吃魚、鳥、蛋及貝類等等…。<br>牠的毛色會隨著季節與所處環境而換裝，在冬天時穿上純白的毛皮，<br>春夏時會逐漸轉變為青灰色。</p>
-                    <p class="tipsh3">譽有「雪中精靈」美稱，旅鼠們的大天敵!<br>　　百變毛色不僅能禦寒，春夏秋冬不盡相同?</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_2.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">
-                    北極狐聞到在旅鼠窩的氣味或聽到旅鼠窩裡旅鼠的尖叫聲時，牠會迅速地挖掘位於雪下面的旅鼠窩。<br>當扒得差不多時，北極狐跳水運動員高高跳起將旅鼠窩壓塌，然後將窩裡的旅鼠一網打盡。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">北極熊</h1>
+            <h2 class="tipssub">POLAR BEAR</h2>
+            <p class="tipsp">
+              陸地上最大的食肉動物，平均壽命25歲。<br />擁有極厚的脂肪及毛髮，北極熊的皮膚其實是黑色，<br />
+              透明的毛髮在陽光及冰層的反射下看起來是白色。<br />主食以海豹維生，但需仰賴海冰來捕食。
+            </p>
+            <p class="tipsh3">
+              因全球暖化而失去大片海冰棲地<br />　　面臨滅絕危機。北極熊可能在21世紀內絕種
+              !
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_1.png" alt="" />
+          </div>
         </div>
-        <div class="modal tip" name="旅鼠">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">LEMMINGS LEMMINGS LEMMINGS LEMMINGS
-                LEMMINGS
-                LEMMINGS LEMMINGS LEMMINGS LEMMINGS</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_3.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">旅鼠</h1>
-                    <h2 class="tipssub"> LEMMINGS</h2>
-                    <p class="tipsp">
-                        是北極圈繁殖速度最快的生物，壽命不超過一年。旅鼠一年能生7－8次，<br>每次可生12隻小旅鼠；族群數量一年內可增加十倍以上，且不冬眠，<br>終年可生殖。旅鼠的食物是草根、草莖和苔蘚。
-                    </p>
-                    <p class="tipsh3">繁殖怪獸 ? ! 北極圈最強生育機器<br>　　為何旅鼠大軍總是上演跳樓戲碼 ?</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_3.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">旅鼠數量據增時，會進行一次大遷移。當他們看到一片海，<br>誤以為只是小河或湖泊，便跳了進去，卻一去不復返。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            為了要確認小熊未來可以獨立生活，母熊會將熊寶寶帶在身邊 2 年半 ~ 3
+            年<br />並傳授所有生存技能給熊寶寶。
+          </p>
         </div>
-        <div class="modal tip" name="麝牛">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">MUSK OX MUSK OX MUSK OX MUSK OX
-                MUSK OX
-                MUSK OX
-                MUSK OX MUSK OX MUSK OX MUSK OX</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_4.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">麝牛</h1>
-                    <h2 class="tipssub"> MUSK OX</h2>
-                    <p class="tipsp">
-                        別名麝香牛，壽命為12 ~ 20
-                        年，<br>麝牛因雄麝牛在發情時會散發出一種類似麝香的氣味，故得名。<br>是羚牛的近親，儘管像牛，但是許多方面都更像羊。<br>主食為草、地衣、苔蘚和其他木本植物，只要有草和苔原就不會餓肚子
-                    </p>
-                    <p class="tipsh3">麝牛是一種介於牛和羊之間的動物<br>　　可以說是一種超大型的野羊 !</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_4.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">
-                    麝牛勇敢而團結，在任何情況下都不會逃跑。當狼和熊等敵害出現時，一群麝牛會立即展開防禦陣形，<br>成年公牛站在最前面，把幼牛圍在中間。公牛會出其不意地發動進攻，用尖角襲擊對方。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
         </div>
-        <div class="modal tip" name="海豹">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">SEAL SEAL SEAL SEAL SEAL SEAL SEAL
-                SEAL
-                SEAL
-                SEAL SEAL SEAL SEAL SEAL SEAL</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_5.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">海豹</h1>
-                    <h2 class="tipssub"> SEAL</h2>
-                    <p class="tipsp">
-                        海豹集中於兩極地區，多數時間在海洋裡活動。<br>雌海豹的壽命為30～35歲，而雄海豹則只為20～25歲。<br>雄性海豹需爭奪地盤及交配權，因此雄性海豹平均壽命<br>會比雌性海豹還要來的短。主食為磷蝦、魚類和魷魚。
-                    </p>
-                    <p class="tipsh3">全球海豹多達12種，可愛的模樣深受大眾喜愛。<br>　　出生時長著絨毛，長大才會換上適合游泳的剛毛。</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_5.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">海豹在水裡可以拍手，但是在陸地上拍不到手，所以他只能拍自己的身體。<br>拍手是因為要吸引異性的注意。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+      </div>
+      <div class="_modal tip" data-name="北極狐">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >ARCTIC FOX ARCTIC FOX ARCTIC FOX ARCTIC FOX ARCTIC FOX ARCTIC FOX
+          ARCTIC FOX ARCTIC FOX ARCTIC FOX</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_2.png" alt="" />
         </div>
-        <div class="modal tip" name="獨角鯨">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">NARWHALL NARWHALL NARWHALL NARWHALL
-                NARWHALL
-                NARWHALL NARWHALL NARWHALL NARWHALL</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_6.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">獨角鯨</h1>
-                    <h2 class="tipssub"> NARWHALL</h2>
-                    <p class="tipsp">
-                        因為牠頭上有一根螺旋狀的犄角，也稱一角鯨。壽命25～50年。<br>在中世紀以前，因為價值非凡，被視為獻給皇帝或女皇的珍稀寶物。<br>主食為遠洋魚類（特別是鱈魚）、魷魚、蝦、<br>以及底棲生物如格陵蘭大比目魚。
-                    </p>
-                    <p class="tipsh3">一角鯨的「犄角」其實是特化的左側尖牙。<br>　　潛水時間可達20分鐘，深處超過1,000公尺。</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_6.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">
-                    雄鯨靠著犄角來吸引大多數沒有獨角的雌鯨注意，爭取交配生子的機會。<br>牠的犄角就像雷達一樣，具有感測能力，可以接收海裡鹽度、溫度和壓力，再把訊息傳達至大腦。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">北極狐</h1>
+            <h2 class="tipssub">ARCTIC FOX</h2>
+            <p class="tipsp">
+              冰島唯一的陸地哺乳動物，壽命3 ~ 6年，<br />北極狐的主食是旅鼠，但也會吃魚、鳥、蛋及貝類等等…。<br />牠的毛色會隨著季節與所處環境而換裝，在冬天時穿上純白的毛皮，<br />春夏時會逐漸轉變為青灰色。
+            </p>
+            <p class="tipsh3">
+              譽有「雪中精靈」美稱，旅鼠們的大天敵!<br />　　百變毛色不僅能禦寒，春夏秋冬不盡相同?
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_2.png" alt="" />
+          </div>
         </div>
-        <div class="modal tip" name="雪鴞">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">SNOWY OWL SNOWY OWL SNOWY OWL SNOWY
-                OWL
-                SNOWY
-                OWL SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_7.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">雪鴞</h1>
-                    <h2 class="tipssub"> SNOWY OWL</h2>
-                    <p class="tipsp">
-                        是唯一不遷徙的鳥類，與大多數貓頭鷹不同，<br>牠是習慣白天行動的乖寶寶，頂多在黃昏後打打獵。<br>喜歡在視野良好的枝頭高處棲息，並憑藉聽覺來打獵覓食。
-                    </p>
-                    <p class="tipsh3">牠的眼球不能動，但頭可以旋轉到 270 度 !<br>　　有雙千里眼與順風耳，可以觀察到極遠的小物體。</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_7.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">《 哈利波特 》當中的信使其實就是雪鴞喔！
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            北極狐聞到在旅鼠窩的氣味或聽到旅鼠窩裡旅鼠的尖叫聲時，牠會迅速地挖掘位於雪下面的旅鼠窩。<br />當扒得差不多時，北極狐跳水運動員高高跳起將旅鼠窩壓塌，然後將窩裡的旅鼠一網打盡。
+          </p>
         </div>
-        <div class="modal tip" name="海鸚">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC
-                PUFFIN
-                ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_8.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">北極海鸚</h1>
-                    <h2 class="tipssub"> ARCTIC PUFFIN</h2>
-                    <p class="tipsp">
-                        喜歡集體活動，以捕獵魚類為食。平均壽命30年。<br>因為翅膀太短導致牠飛行需要助跑，才能比較順利的起飛，<br>著陸必須撞擊水面減速，才能落在水面上。
-                    </p>
-                    <p class="tipsh3">近年因為地球暖化、人為捕獵等因素而瀕臨絕種。<br>　　但現在已有專門的保護機構，目前已穩定下來。</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_8.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">因為顏色和企鵝十分相似，鳥嘴上的橘紅色非常醒目，也因此牠們被稱做「海上小丑」。
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
         </div>
-        <div class="modal tip" name="雪貂">
-            <marquee class="tipsmarquee" scrollamount="20" direction="right">FERRETS FERRETS FERRETS FERRETS
-                FERRETS
-                FERRETS
-                FERRETS FERRETS FERRETS FERRETS FERRETS FERRETS FERRETS</marquee>
-            <div class="flax_1 lgblock-2">
-                <img class="tipspicture" src="image/tips/tips_9.png" alt="">
-            </div>
-            <div class="tipsgroup">
-                <div class="flex_2">
-                    <h1 class="tipstitle">雪貂</h1>
-                    <h2 class="tipssub"> FERRETS</h2>
-                    <p class="tipsp">
-                        天性喜愛冒險，總是四處亂竄，壽命5 – 10
-                        年。<br>馴化已有千年的歷史，漸漸被馴養為寵物的寵物貂已經不適合野外生活。<br>家養雪貂通常作為寵物餵養，或被用來驅趕洞穴中的老鼠和兔子。<br>雪貂常常讓人誤是全白色，其實純白色野生雪貂極為罕見。
-                    </p>
-                    <p class="tipsh3">在倫敦等地有利用雪貂來鋪設電線及電纜。<br>　　紐西蘭甚至有矇眼貂註冊為電工助手。</p>
-                </div>
-                <div class="flax_1 lgnone">
-                    <img class="tipspicture" src="image/tips/tips_9.png" alt="">
-                </div>
-            </div>
-            <div class="tipsgroup_2">
-                <div class="parallelogram">
-                    <p class="tipspar">小知識</p>
-                </div>
-                <p class="tipsp2">比貓還愛搗蛋，比狗的好奇心還要旺盛，極具破壞性，<br>他們喜愛偷偷跑到別人家偷牠們的家禽，北極圈的屁孩^^
-                </p>
-            </div>
-            <div class="group">
-                <button class="btn_white btn_modal">BACK</button>
-            </div>
+      </div>
+      <div class="_modal tip" data-name="旅鼠">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >LEMMINGS LEMMINGS LEMMINGS LEMMINGS LEMMINGS LEMMINGS LEMMINGS
+          LEMMINGS LEMMINGS</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_3.png" alt="" />
         </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">旅鼠</h1>
+            <h2 class="tipssub">LEMMINGS</h2>
+            <p class="tipsp">
+              是北極圈繁殖速度最快的生物，壽命不超過一年。旅鼠一年能生7－8次，<br />每次可生12隻小旅鼠；族群數量一年內可增加十倍以上，且不冬眠，<br />終年可生殖。旅鼠的食物是草根、草莖和苔蘚。
+            </p>
+            <p class="tipsh3">
+              繁殖怪獸 ? ! 北極圈最強生育機器<br />　　為何旅鼠大軍總是上演跳樓戲碼
+              ?
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_3.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            旅鼠數量據增時，會進行一次大遷移。當他們看到一片海，<br />誤以為只是小河或湖泊，便跳了進去，卻一去不復返。
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="麝牛">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >MUSK OX MUSK OX MUSK OX MUSK OX MUSK OX MUSK OX MUSK OX MUSK OX MUSK
+          OX MUSK OX</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_4.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">麝牛</h1>
+            <h2 class="tipssub">MUSK OX</h2>
+            <p class="tipsp">
+              別名麝香牛，壽命為12 ~ 20 年，<br />麝牛因雄麝牛在發情時會散發出一種類似麝香的氣味，故得名。<br />是羚牛的近親，儘管像牛，但是許多方面都更像羊。<br />主食為草、地衣、苔蘚和其他木本植物，只要有草和苔原就不會餓肚子
+            </p>
+            <p class="tipsh3">
+              麝牛是一種介於牛和羊之間的動物<br />　　可以說是一種超大型的野羊 !
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_4.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            麝牛勇敢而團結，在任何情況下都不會逃跑。當狼和熊等敵害出現時，一群麝牛會立即展開防禦陣形，<br />成年公牛站在最前面，把幼牛圍在中間。公牛會出其不意地發動進攻，用尖角襲擊對方。
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="海豹">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL SEAL
+          SEAL</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_5.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">海豹</h1>
+            <h2 class="tipssub">SEAL</h2>
+            <p class="tipsp">
+              海豹集中於兩極地區，多數時間在海洋裡活動。<br />雌海豹的壽命為30～35歲，而雄海豹則只為20～25歲。<br />雄性海豹需爭奪地盤及交配權，因此雄性海豹平均壽命<br />會比雌性海豹還要來的短。主食為磷蝦、魚類和魷魚。
+            </p>
+            <p class="tipsh3">
+              全球海豹多達12種，可愛的模樣深受大眾喜愛。<br />　　出生時長著絨毛，長大才會換上適合游泳的剛毛。
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_5.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            海豹在水裡可以拍手，但是在陸地上拍不到手，所以他只能拍自己的身體。<br />拍手是因為要吸引異性的注意。
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="獨角鯨">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >NARWHALL NARWHALL NARWHALL NARWHALL NARWHALL NARWHALL NARWHALL
+          NARWHALL NARWHALL</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_6.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">獨角鯨</h1>
+            <h2 class="tipssub">NARWHALL</h2>
+            <p class="tipsp">
+              因為牠頭上有一根螺旋狀的犄角，也稱一角鯨。壽命25～50年。<br />在中世紀以前，因為價值非凡，被視為獻給皇帝或女皇的珍稀寶物。<br />主食為遠洋魚類（特別是鱈魚）、魷魚、蝦、<br />以及底棲生物如格陵蘭大比目魚。
+            </p>
+            <p class="tipsh3">
+              一角鯨的「犄角」其實是特化的左側尖牙。<br />　　潛水時間可達20分鐘，深處超過1,000公尺。
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_6.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            雄鯨靠著犄角來吸引大多數沒有獨角的雌鯨注意，爭取交配生子的機會。<br />牠的犄角就像雷達一樣，具有感測能力，可以接收海裡鹽度、溫度和壓力，再把訊息傳達至大腦。
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="雪鴞">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL SNOWY OWL
+          SNOWY OWL SNOWY OWL SNOWY OWL</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_7.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">雪鴞</h1>
+            <h2 class="tipssub">SNOWY OWL</h2>
+            <p class="tipsp">
+              是唯一不遷徙的鳥類，與大多數貓頭鷹不同，<br />牠是習慣白天行動的乖寶寶，頂多在黃昏後打打獵。<br />喜歡在視野良好的枝頭高處棲息，並憑藉聽覺來打獵覓食。
+            </p>
+            <p class="tipsh3">
+              牠的眼球不能動，但頭可以旋轉到 270 度 !<br />　　有雙千里眼與順風耳，可以觀察到極遠的小物體。
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_7.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">《 哈利波特 》當中的信使其實就是雪鴞喔！</p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="海鸚">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN
+          ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN ARCTIC PUFFIN</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_8.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">北極海鸚</h1>
+            <h2 class="tipssub">ARCTIC PUFFIN</h2>
+            <p class="tipsp">
+              喜歡集體活動，以捕獵魚類為食。平均壽命30年。<br />因為翅膀太短導致牠飛行需要助跑，才能比較順利的起飛，<br />著陸必須撞擊水面減速，才能落在水面上。
+            </p>
+            <p class="tipsh3">
+              近年因為地球暖化、人為捕獵等因素而瀕臨絕種。<br />　　但現在已有專門的保護機構，目前已穩定下來。
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_8.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            因為顏色和企鵝十分相似，鳥嘴上的橘紅色非常醒目，也因此牠們被稱做「海上小丑」。
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
+      <div class="_modal tip" data-name="雪貂">
+        <marquee class="tipsmarquee" scrollamount="20" direction="right"
+          >FERRETS FERRETS FERRETS FERRETS FERRETS FERRETS FERRETS FERRETS
+          FERRETS FERRETS FERRETS FERRETS FERRETS</marquee
+        >
+        <div class="flax_1 lgblock-2">
+          <img class="tipspicture" src="image/tips/tips_9.png" alt="" />
+        </div>
+        <div class="tipsgroup">
+          <div class="flex_2">
+            <h1 class="tipstitle">雪貂</h1>
+            <h2 class="tipssub">FERRETS</h2>
+            <p class="tipsp">
+              天性喜愛冒險，總是四處亂竄，壽命5 – 10 年。<br />馴化已有千年的歷史，漸漸被馴養為寵物的寵物貂已經不適合野外生活。<br />家養雪貂通常作為寵物餵養，或被用來驅趕洞穴中的老鼠和兔子。<br />雪貂常常讓人誤是全白色，其實純白色野生雪貂極為罕見。
+            </p>
+            <p class="tipsh3">
+              在倫敦等地有利用雪貂來鋪設電線及電纜。<br />　　紐西蘭甚至有矇眼貂註冊為電工助手。
+            </p>
+          </div>
+          <div class="flax_1 lgnone">
+            <img class="tipspicture" src="image/tips/tips_9.png" alt="" />
+          </div>
+        </div>
+        <div class="tipsgroup_2">
+          <div class="parallelogram">
+            <p class="tipspar">小知識</p>
+          </div>
+          <p class="tipsp2">
+            比貓還愛搗蛋，比狗的好奇心還要旺盛，極具破壞性，<br />他們喜愛偷偷跑到別人家偷牠們的家禽，北極圈的屁孩^^
+          </p>
+        </div>
+        <div class="group">
+          <button class="btn_white btn_back">BACK</button>
+        </div>
+      </div>
     </div>
 
-    <div class="groupCol_2 area_26 modal" name="donate">
-        <h1 class="h1sm">透過捐款搶救更多受傷的環境 ! </h1>
-        <div class="group-1">
-            <div class="picturex34 smimg">
-                <a href="https://polarbearsinternational.org/act-now/donate/" target="_blank">
-                    <img src="image/donation3.png" alt="">
-                    <p class="flagdesc5-4"><br>北極熊國際</p>
-                </a>
-            </div>
-            <div class="picturex34 smimg2">
-                <a href="https://apps4.wwf.org.hk/donation/zh/earthhour/monthly/choose-amount" target="_blank">
-                    <img src="image/donation2.png" alt="">
-                    <p class="flagdesc5-4"><br>世界自然基金會</p>
-                </a>
-            </div>
-            <div class="picturex34 smimg">
-                <a href="https://www.greenpeace.org/taiwan/" target="_blank">
-                    <img src="image/donation1.png" alt="">
-                    <p class="flagdesc5-4"><br>綠色和平</p>
-                </a>
-            </div>
+    <div class="groupCol_2 area_26 _modal" data-name="donate">
+      <h1 class="h1sm">透過捐款搶救更多受傷的環境 !</h1>
+      <div class="group-1">
+        <div class="picturex34 smimg">
+          <a
+            href="https://polarbearsinternational.org/act-now/donate/"
+            target="_blank"
+          >
+            <img src="image/donation3.png" alt="" />
+            <p class="flagdesc5-4"><br />北極熊國際</p>
+          </a>
         </div>
-        <button class="btn_back btn_modal">BACK</button>
+        <div class="picturex34 smimg2">
+          <a
+            href="https://apps4.wwf.org.hk/donation/zh/earthhour/monthly/choose-amount"
+            target="_blank"
+          >
+            <img src="image/donation2.png" alt="" />
+            <p class="flagdesc5-4"><br />世界自然基金會</p>
+          </a>
+        </div>
+        <div class="picturex34 smimg">
+          <a href="https://www.greenpeace.org/taiwan/" target="_blank">
+            <img src="image/donation1.png" alt="" />
+            <p class="flagdesc5-4"><br />綠色和平</p>
+          </a>
+        </div>
+      </div>
+      <button class="btn_back btn_white">BACK</button>
     </div>
     <!-- 按鈕展開內容 -->
-    <div class="groupCol_2 area_26 modal" name="那麼大的面積是什麼樣的想像">
-        <h1>50萬平方英里等於</h1>
-        <div class="group">
-            <div class="g_25">
-                <h1>130萬<br>平方公尺</h1>
-            </div>
-            <div class="g_25">
-                <img src="image/05.png" alt="">
-                <p class="flagdesc">40個台灣</p>
-            </div>
-            <div class="g_25">
-                <img src="image/05-1.png" alt="">
-                <p class="flagdesc">大於內蒙古自治區</p>
-            </div>
+    <div class="groupCol_2 area_26 _modal" data-name="那麼大的面積是什麼樣的想像">
+      <h1>50萬平方英里等於</h1>
+      <div class="group">
+        <div class="g_25">
+          <h1>130萬<br />平方公尺</h1>
         </div>
-        <button class="btn_back btn_255 btn_modal">BACK</button>
+        <div class="g_25">
+          <img src="image/05.png" alt="" />
+          <p class="flagdesc">40個台灣</p>
+        </div>
+        <div class="g_25">
+          <img src="image/05-1.png" alt="" />
+          <p class="flagdesc">大於內蒙古自治區</p>
+        </div>
+      </div>
+      <button class="btn_back btn_255 btn_white">BACK</button>
     </div>
 
     <!--04 應該怎麼做-->
-    <div class="tp_6 modal" name="轉用電動車">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">02</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1-2">轉用電動車</h1>
-                        <p class="blackh2">使用電動車有什麼優點？
-                        </p>
-                    </div>
-                </div>
-                <div class="groupCol">
-                    <p class="slash itemleft" style="color: #2f2623;">
-                        減少對化石燃料的依賴&　　　　　- 降低車輛行進過程中產生的碳排放與空氣污染<br><br>-
-                        電動車減速可回充電力，因此在塞車怠速時能將動能轉為電能，<br>　適合住家附近缺乏大眾運輸工具的通勤族作為代步工具
-                    </p>
-                </div>
-                <div class="group">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_6 _modal" data-name="轉用電動車">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">02</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1-2">轉用電動車</h1>
+              <p class="blackh2">使用電動車有什麼優點？</p>
+            </div>
+          </div>
+          <div class="groupCol">
+            <p class="slash itemleft" style="color: #2f2623">
+              減少對化石燃料的依賴&　　　　　-
+              降低車輛行進過程中產生的碳排放與空氣污染<br /><br />-
+              電動車減速可回充電力，因此在塞車怠速時能將動能轉為電能，<br />　適合住家附近缺乏大眾運輸工具的通勤族作為代步工具
+            </p>
+          </div>
+          <div class="group">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="tp_5 modal" name="重複利用降低物慾">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">03</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1-2">重複利用降低物慾</h1>
-                        <p class="blackh2">我們所穿的每一件衣服、所用的每一項物品，<br>在生產、運送的過程中都累積了或多或少的碳足跡。
-                        </p>
-                    </div>
-                </div>
-                <div class="groupCol">
-                    <p class="slash itemleft" style="color: #2f2623;">
-                        人類的生存活動無可避免地會消耗地球資源與能源，正因如此，<br>我們更應該對手中的物件心懷感激，正確使用每一樣產品，<br>在安全範圍內延長物品的使用壽命，尋找重複利用的可能，<br>為手中的資源，創造最大的效用。
-                    </p>
-                </div>
-                <div class="group">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_5 _modal" data-name="重複利用降低物慾">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">03</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1-2">重複利用降低物慾</h1>
+              <p class="blackh2">
+                我們所穿的每一件衣服、所用的每一項物品，<br />在生產、運送的過程中都累積了或多或少的碳足跡。
+              </p>
+            </div>
+          </div>
+          <div class="groupCol">
+            <p class="slash itemleft" style="color: #2f2623">
+              人類的生存活動無可避免地會消耗地球資源與能源，正因如此，<br />我們更應該對手中的物件心懷感激，正確使用每一樣產品，<br />在安全範圍內延長物品的使用壽命，尋找重複利用的可能，<br />為手中的資源，創造最大的效用。
+            </p>
+          </div>
+          <div class="group">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="tp_1 modal" name="利用大眾運輸通勤">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">07</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1-2">利用大眾運輸通勤</h1>
-                        <p class="blackh2">根據環保署統計，在臺灣，包含飛機、汽車等交通運輸<br>產生的碳排放佔比約為總量的 14%。
-                        </p>
-                    </div>
-                </div>
-                <div class="groupCol">
-                    <p class="slash itemleft" style="color: #2f2623;">
-                        若我們能改變每天的通勤方式，搭乘捷運、公車，或與住的近的同事共乘，<br>甚至挑戰騎腳踏車上、下班，不但能減少二氧化碳排放，<br>也能同時減少空氣污染，提高運動量！
-                    </p>
-                </div>
-                <div class="group">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_1 _modal" data-name="利用大眾運輸通勤">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">07</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1-2">利用大眾運輸通勤</h1>
+              <p class="blackh2">
+                根據環保署統計，在臺灣，包含飛機、汽車等交通運輸<br />產生的碳排放佔比約為總量的
+                14%。
+              </p>
+            </div>
+          </div>
+          <div class="groupCol">
+            <p class="slash itemleft" style="color: #2f2623">
+              若我們能改變每天的通勤方式，搭乘捷運、公車，或與住的近的同事共乘，<br />甚至挑戰騎腳踏車上、下班，不但能減少二氧化碳排放，<br />也能同時減少空氣污染，提高運動量！
+            </p>
+          </div>
+          <div class="group">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="tp_7 modal" name="親近再生能源">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">01</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1-2">親近再生能源</h1>
-                        <p class="blackh2">我們可以選擇親近相較之下更環保、永續的再生能源，<br>從源頭一點一滴改變我們的能源使用習慣！
-                        </p>
-                    </div>
-                </div>
-                <div class="groupCol">
-                    <p class="slash itemleft" style="color: #2f2623;">
-                        無論是在自家屋頂、廠房安裝太陽能板，或是參與公民電廠集資，<br>甚至是在社區大會中提議使用再生能源，都是增加社會大眾對再生能源的認識、<br>加速再生能源成長的養分與推力。
-                    </p>
-                </div>
-                <div class="group">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_7 _modal" data-name="親近再生能源">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">01</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1-2">親近再生能源</h1>
+              <p class="blackh2">
+                我們可以選擇親近相較之下更環保、永續的再生能源，<br />從源頭一點一滴改變我們的能源使用習慣！
+              </p>
+            </div>
+          </div>
+          <div class="groupCol">
+            <p class="slash itemleft" style="color: #2f2623">
+              無論是在自家屋頂、廠房安裝太陽能板，或是參與公民電廠集資，<br />甚至是在社區大會中提議使用再生能源，都是增加社會大眾對再生能源的認識、<br />加速再生能源成長的養分與推力。
+            </p>
+          </div>
+          <div class="group">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--02使用節能家電-->
-    <div class="tp_2 modal" name="使用節能家電">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">06</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1">使用節能家電</h1>
-                        <p class="blackh2">以家中最耗電的冷氣為例，設有節能標章的冷氣<br>
-                            在 10 坪大小的房間內全年運轉，比沒有節能標章的冷氣...
-                        </p>
-                    </div>
-                </div>
-                <div class="group-2">
-                    <div class="g_text_t2">
-                        <div class="right50px">
-                            <p>平均 1 年可省下<br></p>
-                            <p class="t2_title">500-700</p>
-                            <p class="text_right">度電</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p>平均 1 年減碳約 <br></p>
-                        <p class="t2_title">300-400</p>
-                        <p class="text_right">公斤</p>
-                    </div>
-                </div>
-                <div class="group-3">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_2 _modal" data-name="使用節能家電">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">06</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1">使用節能家電</h1>
+              <p class="blackh2">
+                以家中最耗電的冷氣為例，設有節能標章的冷氣<br />
+                在 10 坪大小的房間內全年運轉，比沒有節能標章的冷氣...
+              </p>
+            </div>
+          </div>
+          <div class="group-2">
+            <div class="g_text_t2">
+              <div class="right50px">
+                <p>平均 1 年可省下<br /></p>
+                <p class="t2_title">500-700</p>
+                <p class="text_right">度電</p>
+              </div>
+            </div>
+            <div>
+              <p>平均 1 年減碳約 <br /></p>
+              <p class="t2_title">300-400</p>
+              <p class="text_right">公斤</p>
+            </div>
+          </div>
+          <div class="group-3">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--03拒用塑膠製品-->
-    <div class="tp_3 modal" name="拒用塑膠製品">
-        <div class="rat">
-            <div class="backgroundblack">
-                <div class="groupend_tip">
-                    <div class="g_black_1">
-                        <p class="backgroundblack-1">05</p>
-                    </div>
-                    <div class="g_black_2">
-                        <h1 class="blackh1">拒用塑膠製品</h1>
-                        <p class="blackh2">根據艾倫‧麥克阿瑟基金會的研究，<br>
-                            過去 50 年，全球的塑膠產量就增加了 20 多倍...
-                        </p>
-                    </div>
-                </div>
-                <div class="group-4">
-                    <div class="g_text_t3">
-                        <p class="text_right t2_text">塑膠生產的碳足跡更佔了<br>
-                            <span style="font-size: 30px;">全球碳排放量</span>
-                        </p>
-                        <p class="sm6after">相當於「全球航空業」的碳排放量。</p>
-                    </div>
-                    <p class="t3_em">6%</p>
-                </div>
-                <div class="group-3-1">
-                    <button class="btn_back btn_modal">BACK</button>
-                </div>
+    <div class="tp_3 _modal" data-name="拒用塑膠製品">
+      <div class="rat">
+        <div class="backgroundblack">
+          <div class="groupend_tip">
+            <div class="g_black_1">
+              <p class="backgroundblack-1">05</p>
             </div>
+            <div class="g_black_2">
+              <h1 class="blackh1">拒用塑膠製品</h1>
+              <p class="blackh2">
+                根據艾倫‧麥克阿瑟基金會的研究，<br />
+                過去 50 年，全球的塑膠產量就增加了 20 多倍...
+              </p>
+            </div>
+          </div>
+          <div class="group-4">
+            <div class="g_text_t3">
+              <p class="text_right t2_text">
+                塑膠生產的碳足跡更佔了<br />
+                <span style="font-size: 30px">全球碳排放量</span>
+              </p>
+              <p class="sm6after">相當於「全球航空業」的碳排放量。</p>
+            </div>
+            <p class="t3_em">6%</p>
+          </div>
+          <div class="group-3-1">
+            <button class="btn_back btn_blue">BACK</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--04培養少肉多蔬的飲食習慣-->
-    <div class="tp_4 modal" name="培養少肉多蔬">
-        <div class="rat">
-            <div class="groupend_tip">
-                <div class="g_black_1">
-                    <p class="backgroundblack-1">04</p>
-                </div>
-                <div class="g_black_2">
-                    <h1 class="blackh1">培養少肉多蔬的飲食習慣</h1>
-                    <p class="blackh2">光是畜牧業的溫室氣體排放量就佔全球排放量的 18%，<br>
-                        比全球運輸業的碳排放量加總起來還多。
-                    </p>
-                </div>
-            </div>
-            <div class="group-4">
-                <div class="g_text_t2 ">
-                    <p>一個臺灣人一天不吃肉，能減去至少<br></p>
-                    <p class="t2_title t4_title">2.4公斤</p>
-                    <p>的二氧化碳排放</p>
-                </div>
-                <div class="left20px">
-                    <p>若全臺灣人一天不吃肉，就能減少超過<br></p>
-                    <p class="t2_title t4_title">56,510 公噸</p>
-                    <p>的二氧化碳排放</p>
-                </div>
-            </div>
-            <div class="group-2">
-                <button class="btn_back btn_modal">BACK</button>
-            </div>
+    <div class="tp_4 _modal" data-name="培養少肉多蔬">
+      <div class="rat">
+        <div class="groupend_tip">
+          <div class="g_black_1">
+            <p class="backgroundblack-1">04</p>
+          </div>
+          <div class="g_black_2">
+            <h1 class="blackh1">培養少肉多蔬的飲食習慣</h1>
+            <p class="blackh2">
+              光是畜牧業的溫室氣體排放量就佔全球排放量的 18%，<br />
+              比全球運輸業的碳排放量加總起來還多。
+            </p>
+          </div>
         </div>
+        <div class="group-4">
+          <div class="g_text_t2">
+            <p>一個臺灣人一天不吃肉，能減去至少<br /></p>
+            <p class="t2_title t4_title">2.4公斤</p>
+            <p>的二氧化碳排放</p>
+          </div>
+          <div class="left20px">
+            <p>若全臺灣人一天不吃肉，就能減少超過<br /></p>
+            <p class="t2_title t4_title">56,510 公噸</p>
+            <p>的二氧化碳排放</p>
+          </div>
+        </div>
+        <div class="group-2">
+          <button class="btn_back btn_blue">BACK</button>
+        </div>
+      </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -1244,10 +1459,8 @@
             }
         })
     </script> -->
+    <script src="index.js"></script>
     <script src="script.js"></script>
     <script src="scroll.js"></script>
-    <script src="index.js"></script>
-</body>
-
-
+  </body>
 </html>

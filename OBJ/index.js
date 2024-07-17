@@ -1,56 +1,28 @@
-// 北極圈動物知多少
-const modalBtns = document.querySelectorAll('.btn_modal'); //取得所有.point的div
+// 彈出視窗開啟
+$(".btn_modal").on("click", function () {
+  let name = $(this).data("name");
+  console.log(name);
+  $("._modal").each(function () {
+    if ($(this).data("name") === name) {
+      $(this).addClass("active");
+    }
+  });
+});
 
-modalBtns.forEach(modalBtn => {
-    modalBtn.addEventListener('click', function () {
-        let name = this.getAttribute('name');
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            if (modal.getAttribute('name') === name) {
-                modal.classList.add('active');
-            }
-        })
-    })
+//彈出視窗關閉
+$(".btn_back").on("click",function(){
+  const modal = this.closest("._modal"); //往父元素查找._modal的元素
+  modal.classList.remove("active");
 })
 
-// 北極圈動物知多少 關閉按鈕
-const btnModals = document.querySelectorAll(".btn_modal");
-
-btnModals.forEach(button => {
-    button.addEventListener('click', function () {
-        const modal = this.closest('.modal'); //尋找指定的父元素
-        modal.classList.remove('active');
-    })
-})
-
-
-// 台灣淹沒海平線
-const sea1 = document.querySelector(".sea1");
-const sea2 = document.querySelector(".sea2");
-const sea3 = document.querySelector(".sea3");
-const sea4 = document.querySelector(".sea4");
+// 台灣淹沒海平線選擇按鈕
 const seamap = document.querySelector(".seamap");
+$(".btn-sea").on("click", function(){
+  const target = $(this).data("target");
 
-sea1.addEventListener("click", () => {
-    seamap.classList.remove("map2");
-    seamap.classList.remove("map3");
-    seamap.classList.remove("map4"); //切換
+  seamap.classList.remove("map2", "map3", "map4");
+  
+  if(target != null){
+    seamap.classList.toggle(target);
+  }
 })
-sea2.addEventListener("click", () => {
-    seamap.classList.toggle("map2");
-    seamap.classList.remove("map3");
-    seamap.classList.remove("map4"); //切換
-})
-sea3.addEventListener("click", () => {
-    seamap.classList.toggle("map3");
-    seamap.classList.remove("map2");
-    seamap.classList.remove("map4"); //切換
-})
-sea4.addEventListener("click", () => {
-    seamap.classList.toggle("map4");
-    seamap.classList.remove("map2");
-    seamap.classList.remove("map3");
-})
-
-
-
