@@ -1,7 +1,6 @@
 html body {
   margin: 0;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
   background-color: #f3f3f3;
   font-family: "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
@@ -726,6 +725,14 @@ hr {
   text-align: center;
 }
 
+.group-1 img {
+  width: 200px;
+}
+
+#donate img {
+  width: 300px;
+}
+
 /* 製作團隊 */
 .titlegroup {
   padding: 20px 0;
@@ -745,6 +752,7 @@ hr {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  gap: 150px;
 }
 
 .teamgroup .picturex34 {
@@ -753,7 +761,7 @@ hr {
 
 .teamgroup .picturex34 img {
   width: 200px;
-  margin: 0 150px;
+  /* margin: 0 150px; */
 }
 
 .flaggroup {
@@ -2701,21 +2709,13 @@ li input {
     z-index: 1000;
   }
 
-  .tipsbackground .picturex34 img {
-    width: 80px;
-  }
-
   .tipsbackground {
     height: 70vh;
-    /* padding: 50px 0; */
+    padding: 50px 0;
   }
 
   .picturex34 {
     margin: 10px;
-  }
-
-  .smimg img {
-    width: 150px;
   }
 
   .smimg2 img {
